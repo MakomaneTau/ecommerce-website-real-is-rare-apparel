@@ -1,0 +1,11 @@
+[
+    {
+        "productId": 3,
+        "discount" : "10%",
+        "name": "Cargos",
+        "actual_price": 299.99,
+        "imageVariations" : ["../Images/cargo_pants.jpg","../Images/img26.jpg", "../Images/img21.jpg","../Images/img26.jpg"],
+        "colorVariations": ["blue" , "black"],
+        "sizeVariations": ["m", "l", "xl"]
+      }
+]

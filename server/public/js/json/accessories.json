@@ -1,0 +1,20 @@
+[
+    {
+        "productId": 4,
+        "discount" : "10%",
+        "name": "Beanies",
+        "actual_price": 99.99,
+        "imageVariations" : ["../Images/beanies.jpg","../Images/img26.jpg", "../Images/img21.jpg","../Images/img26.jpg"],
+        "colorVariations": ["blue" , "black"],
+        "sizeVariations": ["m", "l", "xl"]
+      },
+      {
+        "productId": 5,
+        "discount" : "10%",
+        "name": "Caps",
+        "actual_price": 149.99,
+        "imageVariations" : ["../Images/beanies.jpg","../Images/img26.jpg", "../Images/img21.jpg","../Images/img26.jpg"],
+        "colorVariations": ["blue" , "black"],
+        "sizeVariations": ["m", "l", "xl"]
+      }
+]

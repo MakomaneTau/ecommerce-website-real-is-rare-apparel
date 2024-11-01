@@ -1,0 +1,30 @@
+[
+    {
+      "productId": 1,
+      "discount" : "50%",
+      "name": "T-Shirt",
+      "actual_price": 199.99,
+      "imageVariations" : ["../Images/t-shirts.jpg","../Images/img24.jpg","../Images/img25.jpg","../Images/img26.jpg"],
+      "colorVariations": ["red", "green", "blue"],
+      "sizeVariations": ["s", "m", "l"]
+    },
+    {
+      "productId": 2,
+      "discount" : "0%",
+      "name": "Sweatshirt",
+      "actual_price": 249.99,
+      "imageVariations" : ["../Images/hoodies.jpg","../Images/img25.jpg","../Images/img26.jpg","../Images/img24.jpg"],
+      "colorVariations": ["black"],
+      "sizeVariations": ["xl", "m"]
+    },
+    {
+      "productId": 3,
+      "discount" : "10%",
+      "name": "Cargos",
+      "actual_price": 299.99,
+      "imageVariations" : ["../Images/beanies.jpg","../Images/img26.jpg", "../Images/img21.jpg","../Images/img26.jpg"],
+      "colorVariations": ["blue" , "black"],
+      "sizeVariations": ["m", "l", "xl"]
+    }
+  ]
+  
