@@ -43,3 +43,13 @@ To get a local copy up and running, follow these steps:
    ```bash
    npm start
 5. Access the application locally at http://localhost:3000
+
+## Usage
+Users can browse products, add items to the cart, and complete their purchases.
+
+## Contributing
+Contributions are welcome! Please open an issue first to discuss what you would like to change. After that, feel free to submit a pull request.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
