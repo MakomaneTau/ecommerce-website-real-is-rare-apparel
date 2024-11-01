@@ -13,7 +13,8 @@ Welcome to the Real is Rare Apparel eCommerce website repository! This platform 
 
 ## Demo
 Link to live demo: [Real is Rare Apparel](#)  
-![Project screenshot](#)
+*(Coming soon… as soon as my code learns to deploy itself!)*  
+For now, enjoy these carefully curated screenshots of the website.
 
 ## Features
 - **Product Listings:** Browse and filter through a variety of products with detailed descriptions.
@@ -21,9 +22,9 @@ Link to live demo: [Real is Rare Apparel](#)
 - **Responsive Design:** Fully optimized for desktop and mobile devices.
 
 ## Tech Stack
-- **Frontend:** HTML, CSS, JavaScript, [React.js/Vue.js]
+- **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Node.js, Express
-- **Hosting:** [Platform used, e.g., Heroku, AWS]
+- **Hosting:** *(Hosting pending... because my code isn't *quite* ready for prime time yet. Maybe it’s afraid of the cloud? 🌩️)*
 
 *(Authentication, Admin Dashboard, Database, and Payment Integration are… under construction! If only code compiled as fast as my hopes for feature releases!) 🛠️*
 
