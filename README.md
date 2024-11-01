@@ -35,7 +35,7 @@ To get a local copy up and running, follow these steps:
    git clone https://github.com/MakomaneTau/ecommerce-website-real-is-rare-apparel.git
 2. Navigate to the project directory:
    ```bash
-   cd ecommerce-website-real-is-rare-apparel
+   cd ecommerce-website-real-is-rare-apparel/server
 3. Install dependencies:
    ```bash
    npm install
