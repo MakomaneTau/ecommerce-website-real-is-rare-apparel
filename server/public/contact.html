@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+       <link href="css/home.css" rel="stylesheet" type="text/css">
+       <link href="css/footer.css" rel="stylesheet" type="text/css">
+       <link href="css/header.css" rel="stylesheet" type="text/css">
+       <link href="css/contact.css" rel="stylesheet" type="text/css">
+       <link href="css/gallery.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="font-awesome/css/all.css">
+        
+        <title>Real is Rare</title>
+    </head>
+    <body>
+        <div class="gallery">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check">
+                    <i class="fas fa-bars" id="btn"></i>
+                    <i class="fas fa-times" id="cancel"></i>
+                </label>
+                <!--<label id="logo"> Real is Rare  </label> Use image here -->
+                <img src="images/logo.jpg" alt="Real is Rare logo">
+                <ul>
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="Shop.html"> Shop Now </a></li>
+                    <li><a href="gallery.html"> Gallery </a></li>
+                    <li><a href="about.html"> About Us </a></li>
+                    <li><a href="contact.html"> Contact Us </a></li>
+                    <li><a href="cart.html"> Cart </a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="contact_container">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <h3>Get in Touch</h3>
+                <input type="hidden" name="access_key" value="b21aafc4-b989-4bb7-8a87-5ee781fbaac5">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Email Id" required>
+                <input type="text" name="phone" placeholder="Phone no." required>
+                <textarea name="message" rows="4" placeholder="How can we help you?"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+
+
+        <footer>
+            <div class="footcontainer">
+                <div class="socialIcons">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="gallery.html"> Gallery </a></li>
+                    <li><a href="about.html"> About Us </a></li>
+                    <li><a href="contact.html"> Contact Us </a></li>
+                </ul>
+            </div>
+            <div class="footerBottom">
+                <p>Copyright &copy;2024; Designed by <span class="designer">Toure</span></p>
+            </div>
+        </footer>
+
+
+    </body>
+</html>
