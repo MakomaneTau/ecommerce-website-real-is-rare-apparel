@@ -1,6 +1,6 @@
 # Real is Rare Apparel - E-commerce Website
 
-Welcome to the Real is Rare Apparel eCommerce website repository! This platform is designed to offer an intuitive and streamlined shopping experience, complete with product listings, a cart system, and checkout functionality. Built with a focus on user experience and functionality, this project showcases my skills in web development and design.
+Welcome to the Real is Rare Apparel eCommerce website repository! This platform is designed to offer an intuitive and streamlined shopping experience, complete with product listings, a cart system, and checkout functionality. Built with a focus on user experience and functionality, this project showcases my skills in web development and design(Hopefully...).
 
 ## Table of Contents
 - [Demo](#demo)
