@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+* {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.main_btn {
+    display: inline-block;
+    background: aqua;
+    color: white;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1300px;
+    margin:auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row,.home-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-2 {
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-2 img {
+    max-width: 100%;
+    padding: 50px 0;
+}
+
+.col-2 h1 {
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+
+.small-container {
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.col-4 {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+}
+
+.col-4 img {
+	width: 100%;
+	transition: .3s;
+	margin-bottom: 10px;
+}
+
+
+
+
+.col-4 a{
+	color: #555;
+	font-size: small;
+	text-decoration: none;
+}
+.col-4:hover{
+	text-decoration: underline;
+}
+
+
+.heading {
+    text-align: center;
+    margin: 0 auto 5px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+
+hr{
+    width: 80%;
+    height: 5px;
+    background: linear-gradient(to right, white 0%, grey 50%, white 100%);
+    margin-bottom: 10px;
+}
+
+.first_section {
+    background: radial-gradient(white, black);
+}
+
+.discount-tag{
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: red;
+    right:10px;
+    top: 10px;
+}
+
+.product-image{
+    position:relative; 
+    width:100%;
+}
+
+.product-image:hover{
+	transform: scale(1.1);
+}
+
+.price{
+	font-weight: 900;
+    font-size: 20px;
+}
+.actual-price{
+    margin-left: 20px;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.no-discount .discount-tag,
+.no-discount .actual-price {
+    display: none;
+}
+
+h3{
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+.product-pricing{
+    margin-left: 20px;
+}
