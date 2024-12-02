@@ -1,3 +1,5 @@
+
+
 const newproductImages = document.querySelector(".product-images");
 const productImageSlide = document.querySelector(".image-slider"); // Select image slider element
 const productDetails = document.querySelector(".product-details");
@@ -112,11 +114,11 @@ colorBtns.forEach((item, i) => {
 // Add event listener for 'Add to Cart' button
 newDetail.querySelector('.btn').addEventListener('click', () => addToCart(product));
 
+
 // Function to add product to cart
 function addToCart(product) {
     //add to cart page
-    let table = document.getElementById(".tableBody");
-
+    
     let row = document.createElement("tr");
 
     let c1 = document.createElement("td");

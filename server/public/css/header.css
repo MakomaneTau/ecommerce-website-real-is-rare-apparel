@@ -225,3 +225,7 @@ body.no-scroll #content {
     background: color #1c1f25;;
     color: #fff;
 }
+/*
+iframe {
+    display: none;
+    }*/

@@ -6,8 +6,8 @@
         
        <link href="css/home.css" rel="stylesheet" type="text/css">
        <link href="css/footer.css" rel="stylesheet" type="text/css">
-       <link href="css/header.css" rel="stylesheet" type="text/css">
-       <link href="css/product.css" rel="stylesheet" type="text/css">
+       <link href="css/header.css" rel="stylesheet" type="text/css"> <!--iframe in this class-->
+       <link href="css/product.css" rel="stylesheet" type="text/css"> 
        <link href="css/gallery.css" rel="stylesheet" type="text/css">
 
         <link rel="stylesheet" href="font-awesome/css/all.css">
@@ -65,10 +65,12 @@
             </div>
         </footer>
 
-
-        <script src="js/product.js"></script>
-        <script src="js/index.js"></script>
-        <script src="js/shop.js"></script>
+        <iframe id="myIframe" src="cart.html" width = 1000px height= 1000px></iframe>
+        
+        <script type="module" src="js/product.js"></script>
+        <script type="module" src="js/cart.js" defer></script>
+        <script type="module" src="js/index.js"></script>
+        <script type="module" src="js/shop.js"></script>
 
     </body>
 </html>
