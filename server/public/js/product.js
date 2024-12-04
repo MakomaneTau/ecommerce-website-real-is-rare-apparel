@@ -1,4 +1,5 @@
-
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+import { addItemToCart, clearCart } from './functions.js';
 
 const newproductImages = document.querySelector(".product-images");
 const productImageSlide = document.querySelector(".image-slider"); // Select image slider element
@@ -90,6 +91,7 @@ newproductImages.addEventListener('click', (event) => {
 // Toggle size buttons
 const sizeBtns = document.querySelectorAll('.size-radio-btn');
 let checkedBtn = 0;
+
 sizeBtns.forEach((item, i) => {
     item.addEventListener('click', () => {
         sizeBtns[checkedBtn].classList.remove('check');
@@ -97,6 +99,8 @@ sizeBtns.forEach((item, i) => {
         checkedBtn = i;
     });
 });
+
+
 
 // Toggle color buttons
 const colorBtns = document.querySelectorAll('.color-radio-btn');
@@ -115,70 +119,27 @@ colorBtns.forEach((item, i) => {
 newDetail.querySelector('.btn').addEventListener('click', () => addToCart(product));
 
 
-// Function to add product to cart
 function addToCart(product) {
-    //add to cart page
+    if (!product || !product.name || !product.actual_price) {
+        console.error("Invalid product object");
+        return;
+    }
+
+    const newItem = {
+        //id: Date.now(), // Unique ID
+        name: product.name,
+        image:product.imageVariations[0],
+        size:checkedBtn,
+        color:checkedColorBtn,
+        price: parseFloat(product.actual_price), // Unit price
+        quantity: 1, // Initial quantity
+        totalPrice: parseFloat(product.actual_price), // Total price for this item
+    };
     
-    let row = document.createElement("tr");
-
-    let c1 = document.createElement("td");
-    let c2 = document.createElement("td");
-    let c3 = document.createElement("td");
-    let c4 = document.createElement("td");
-    let c5 = document.createElement("td");
-    let c6 = document.createElement("td");
-
-    c1.innerHTML = `<a href=""></a><i class="far fa-times-circle"></a></i>`;
-    c2.innerHTML = `<img src="Images/t-shirts.jpg" alt="">`;
-    c3.innerHTML  = `${product.name}`;
-    c4.innerText =  `${product.actual_price}`; //Price has to based on number of products selected;
-    c5.innerHTML = `<input type="number" value = "1">`;
-    c6.innerHTML = `${product.actual_price}`;
-
-    row.appendChild(c1);
-    row.appendChild(c2);
-    row.appendChild(c3);
-    row.appendChild(c4);
-    row.appendChild(c5);
-    row.appendChild(c6);
-    table.appendChild(row)
-
-    console.log("added");
-
-    if (!product) return; // Guard clause if product is null
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.push(product);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    renderCart();
+        
+    
+    addItemToCart(newItem);
 }
+//clearCart();
 
-// Function to render cart items from localStorage
-function renderCart() {
-    const cartList = document.getElementById("cart-list");
-    const totalPriceElem = document.getElementById("total-price");
-    if (!cartList || !totalPriceElem) return; // Guard clause if cart elements are not found
 
-    cartList.innerHTML = "";
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let totalPrice = 0;
-
-    cart.forEach((item) => {
-        let listItem = document.createElement("li");
-        listItem.textContent = `${item.name} - R${item.actual_price}`;
-        cartList.appendChild(listItem);
-        totalPrice += parseFloat(item.actual_price);
-    });
-
-    totalPriceElem.textContent = `Total: R${totalPrice.toFixed(2)}`;
-}
-
-// Clear cart and update display
-function clearCart() {
-    localStorage.removeItem("cart");
-    renderCart();
-}
-
-// Initial rendering of cart when the page loads
-document.addEventListener("DOMContentLoaded", () => {
-    renderCart();
-});
