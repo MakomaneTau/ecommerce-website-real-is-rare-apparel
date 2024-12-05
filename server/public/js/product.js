@@ -130,7 +130,9 @@ function addToCart(product) {
         name: product.name,
         image:product.imageVariations[0],
         size:checkedBtn,
+        size_name:product.sizeVariations[checkedBtn],
         color:checkedColorBtn,
+        color_name:product.colorVariations[checkedColorBtn],
         price: parseFloat(product.actual_price), // Unit price
         quantity: 1, // Initial quantity
         totalPrice: parseFloat(product.actual_price), // Total price for this item
