@@ -39,8 +39,11 @@ export function removeItem(index) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.splice(index, 1); // Remove item by index
     localStorage.setItem("cart", JSON.stringify(cart)); // Save updated cart
-    let tableBody = document.getElementById("tableBody");
-    renderCart(tableBody);
+    if(document.getElementById("tableBody")){
+        let tableBody = document.getElementById("tableBody");
+        renderCart(tableBody);
+    }
+
 }
 
 //this one will only be called in Cart.html
