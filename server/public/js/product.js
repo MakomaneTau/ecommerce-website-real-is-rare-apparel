@@ -143,22 +143,21 @@ function addToCart(product) {
         return;
     }
 
+    // Calculate the final price based on the discount
+    const discountPercentage = product.discount ? parseFloat(product.discount) / 100 : 0;
+    const finalPrice = product.actual_price * (1 - discountPercentage);
+
     const newItem = {
-        //id: Date.now(), // Unique ID
         name: product.name,
-        image:product.imageVariations[0],
-        size:checkedBtn,
-        size_name:product.sizeVariations[checkedBtn],
-        color:checkedColorBtn,
-        color_name:product.colorVariations[checkedColorBtn],
-        price: parseFloat(product.actual_price), // Unit price
+        image: product.imageVariations[0], // Main product image
+        size: checkedBtn,
+        size_name: product.sizeVariations[checkedBtn],
+        color: checkedColorBtn,
+        color_name: product.colorVariations[checkedColorBtn],
+        price: finalPrice.toFixed(2), // Discounted price (if any)
         quantity: 1, // Initial quantity
-        totalPrice: parseFloat(product.actual_price), // Total price for this item
+        totalPrice: finalPrice.toFixed(2), // Total price for this item
     };
-    
-        
-    
+
     addItemToCart(newItem);
 }
-
-//conisder the price and discounted price when adding the newitem

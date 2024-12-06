@@ -2,8 +2,6 @@ let listProductHtml = document.querySelector('.home-row');
 
 let listProducts = [];
 
-console.log("hello");
-
 const addDataToHTML = () =>{
     listProductHtml.innerHTML = '';
     if(listProducts.length > 0){
