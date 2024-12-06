@@ -31,6 +31,13 @@ const addDataToHTML = () =>{
                     <span class="actual-price">R${product.actual_price}</span> <!-- Original price -->
                 </div>
             `;
+
+            // Add click event to store product data and navigate to product page
+            newProduct.addEventListener("click", () => {
+                localStorage.setItem('productData', JSON.stringify(product));
+                window.location.href = '/product.html';
+            });
+            
             listProductHtml.appendChild(newProduct);
         })
     }

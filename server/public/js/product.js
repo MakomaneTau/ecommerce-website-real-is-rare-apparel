@@ -47,15 +47,16 @@ if (product && product.sizeVariations.length > 0) {
         newSize.name = 'size';
         newSize.value = size;
         newSize.id = `${size}-size`;
-        if(size === product.sizeVariations[0]){
-            newSize.checked = true;    
-        }        
         newSize.hidden = true;
 
         let newLabel = document.createElement('label');
         newLabel.htmlFor = `${size}-size`;
         newLabel.classList.add('size-radio-btn');
-        newLabel.innerText = size.charAt(0).toUpperCase();
+        /*if (newSize.value === product.sizeVariations[0]) {
+            newLabel.checked = true; // Default to the first size
+        }*/
+        newLabel.innerText = size.charAt(0).toUpperCase() + size.slice(1);
+
         //newLabel.style.borderColor = `${color}`;
 
         newDetail.appendChild(newSize);
@@ -82,9 +83,7 @@ if (product && product.colorVariations.length > 0) {
         newLabel.classList.add('color-radio-btn');
         newLabel.innerText = color.charAt(0).toUpperCase();
         newLabel.style.borderColor = `${color}`;
-        if(color === product.sizeVariations[0]){
-            newLabel.checked = true;    
-        }        
+           
 
         newDetail.appendChild(newColor);
         newDetail.appendChild(newLabel);
@@ -161,6 +160,5 @@ function addToCart(product) {
     
     addItemToCart(newItem);
 }
-//clearCart();
 
-
+//conisder the price and discounted price when adding the newitem
