@@ -38,18 +38,35 @@ newDetail.innerHTML = `
     ${discountPercentage > 0 ? `<span class="product-actual-price">R${product.actual_price}</span>
     <span class="product-discount">( ${product.discount} off )</span>` : ""}
     <p class="product-sub-heading">Select size</p>
-
-    <input type="radio" name="size" value="s" checked hidden id="s-size">
-    <label for="s-size" class="size-radio-btn check">S</label>
-    <input type="radio" name="size" value="m" hidden id="m-size">
-    <label for="m-size" class="size-radio-btn">M</label>
-    <input type="radio" name="size" value="L" hidden id="l-size">
-    <label for="l-size" class="size-radio-btn">L</label>
-    <input type="radio" name="size" value="xl" hidden id="xl-size">
-    <label for="xl-size" class="size-radio-btn">XL</label>
-
-    <p class="product-sub-heading">Select Color</p>
 `;
+
+if (product && product.sizeVariations.length > 0) {
+    product.sizeVariations.forEach(size => {
+        let newSize = document.createElement('input');
+        newSize.type = 'radio';
+        newSize.name = 'size';
+        newSize.value = size;
+        newSize.id = `${size}-size`;
+        newSize.hidden = true;
+
+        let newLabel = document.createElement('label');
+        newLabel.htmlFor = `${size}-size`;
+        newLabel.classList.add('size-radio-btn');
+        /*if (newSize.value === product.sizeVariations[0]) {
+            newLabel.checked = true; // Default to the first size
+        }*/
+        newLabel.innerText = size.charAt(0).toUpperCase() + size.slice(1);
+
+        //newLabel.style.borderColor = `${color}`;
+
+        newDetail.appendChild(newSize);
+        newDetail.appendChild(newLabel);
+    });
+}
+
+newDetail.innerHTML += `
+    <p class="product-sub-heading">Select Color</p>
+`
 
 // Add color selection options
 if (product && product.colorVariations.length > 0) {
@@ -66,6 +83,7 @@ if (product && product.colorVariations.length > 0) {
         newLabel.classList.add('color-radio-btn');
         newLabel.innerText = color.charAt(0).toUpperCase();
         newLabel.style.borderColor = `${color}`;
+           
 
         newDetail.appendChild(newColor);
         newDetail.appendChild(newLabel);
@@ -125,23 +143,21 @@ function addToCart(product) {
         return;
     }
 
+    // Calculate the final price based on the discount
+    const discountPercentage = product.discount ? parseFloat(product.discount) / 100 : 0;
+    const finalPrice = product.actual_price * (1 - discountPercentage);
+
     const newItem = {
-        //id: Date.now(), // Unique ID
         name: product.name,
-        image:product.imageVariations[0],
-        size:checkedBtn,
-        size_name:product.sizeVariations[checkedBtn],
-        color:checkedColorBtn,
-        color_name:product.colorVariations[checkedColorBtn],
-        price: parseFloat(product.actual_price), // Unit price
+        image: product.imageVariations[0], // Main product image
+        size: checkedBtn,
+        size_name: product.sizeVariations[checkedBtn],
+        color: checkedColorBtn,
+        color_name: product.colorVariations[checkedColorBtn],
+        price: finalPrice.toFixed(2), // Discounted price (if any)
         quantity: 1, // Initial quantity
-        totalPrice: parseFloat(product.actual_price), // Total price for this item
+        totalPrice: finalPrice.toFixed(2), // Total price for this item
     };
-    
-        
-    
+
     addItemToCart(newItem);
 }
-//clearCart();
-
-

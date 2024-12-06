@@ -39,8 +39,11 @@ export function removeItem(index) {
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
     cart.splice(index, 1); // Remove item by index
     localStorage.setItem("cart", JSON.stringify(cart)); // Save updated cart
-    let tableBody = document.getElementById("tableBody");
-    renderCart(tableBody);
+    if(document.getElementById("tableBody")){
+        let tableBody = document.getElementById("tableBody");
+        renderCart(tableBody);
+    }
+
 }
 
 //this one will only be called in Cart.html
@@ -79,7 +82,7 @@ export function renderCart(tableBody) {
         let size = item.size_name;
         c3.innerHTML = `${item.name} (${size.toUpperCase()})`;
         c4.innerHTML = `${item.color_name}`;
-        c5.innerText = `R${item.price.toFixed(2)}`;
+        c5.innerText = `R${item.price}`;
         
         c6.innerHTML = `
             <button class = "decrement" data-index-number = "${index}">-</button>
@@ -88,7 +91,7 @@ export function renderCart(tableBody) {
         
         c7.innerText = `R${item.totalPrice.toFixed(2)}`;
         
-        total += parseFloat(item.totalPrice.toFixed(2));
+        total += parseFloat(item.totalPrice);
 
         row.appendChild(c1);
         row.appendChild(c2);
@@ -129,6 +132,15 @@ export function renderCart(tableBody) {
 
     subtotal.innerText = `R${total.toFixed(2)}`;
     totalCart.innerHTML = `<strong>R${total.toFixed(2)}</strong>`;
+
+    let removeButton = document.querySelectorAll(".remove-item");
+
+    removeButton.forEach((button) => {
+        button.addEventListener("click", ()=> {
+            const index = button.dataset.indexNumber;
+            removeItem(parseInt(index,10));
+        })
+    });
 
 
 
