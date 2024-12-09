@@ -1,3 +1,7 @@
+import { getTotalItemsInCart } from "./functions.js";
+let cart_quantity = document.querySelector(".quantity");
+cart_quantity.innerHTML = getTotalItemsInCart();
+
 const topsRow = document.getElementById('tops');
 const pantsRow = document.getElementById('pants');
 const accessoriesRow = document.getElementById('accessories');

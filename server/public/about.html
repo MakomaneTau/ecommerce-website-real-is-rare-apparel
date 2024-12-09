@@ -39,10 +39,46 @@
                 </ul>
             </nav>
         </div>
-        <div class="store_img">
-          <img src = "./Images/img8.jpg">
+        <div class="store">
+            <a href="https://maps.app.goo.gl/dkp5x3JXNFWwJicX6"><img src = "./Images/img8.jpg"></a> <!--Make sure this is the store image-->
+          <div class="reveal">
+            <a href="https://maps.app.goo.gl/dkp5x3JXNFWwJicX6">Click to get directions</a>
+          </div>
         </div>
-        
+
+        <h1 class="heading"> Who are we:</h1>
+        <hr/>
+        <div class="cards">
+            <div class="profile">
+                <img src="./Images/img8.jpg" alt="Profile Image">
+                <div class="content">
+                    <Strong>Name</Strong>
+                    <br>
+                    <strong>Founder</strong>
+                    <br>
+                    <h3>Contact:</h3>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nobis dolore molestiae, adipisci aut, consequatur beatae laboriosam vitae nemo cum molestias animi, necessitatibus ipsam mollitia asperiores quibusdam nesciunt quaerat! Earum!</p>
+                </div>
+            </div>
+            <div class="profile">
+                <img src="./Images/img8.jpg" alt="Profile Image">
+                <div class="content">
+                    <Strong>Name</Strong>
+                    <br>
+                    <strong>Founder</strong>
+                    <br>
+                    <h3>Contact:</h3>
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nobis dolore molestiae, adipisci aut, consequatur beatae laboriosam vitae nemo cum molestias animi, necessitatibus ipsam mollitia asperiores quibusdam nesciunt quaerat! Earum!</p>
+                </div>
+            </div>
+        </div>
+
         <footer>
             <div class="footcontainer">
                 <div class="socialIcons">
@@ -63,15 +99,8 @@
             </div>
         </footer>
 
-        <script>
-          let counter = 1;
-          setInterval(() => {
-              document.getElementById(`radio${counter}`).checked = true;
-              counter = counter % 4 + 1; // Assuming 4 slides
-          }, 5000); // Change slide every 5 seconds
 
-        </script>
-
+        <script type="module" src="js/about.js"></script>
 
     </body>
 </html>

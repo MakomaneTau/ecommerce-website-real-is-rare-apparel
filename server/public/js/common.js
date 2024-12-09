@@ -1,3 +1,7 @@
+import { getTotalItemsInCart } from "./functions.js";
+let cart_quantity = document.querySelector(".quantity");
+cart_quantity.innerHTML = getTotalItemsInCart();
+
 let table = document.getElementById("tableBody");
     if (!table) {
         console.error("Table body not found");

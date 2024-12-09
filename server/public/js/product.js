@@ -1,5 +1,7 @@
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-import { addItemToCart, clearCart } from './functions.js';
+import { addItemToCart, getTotalItemsInCart } from './functions.js';
+
+let cart_quantity = document.querySelector(".quantity");
+
 
 const newproductImages = document.querySelector(".product-images");
 const productImageSlide = document.querySelector(".image-slider"); // Select image slider element
@@ -160,4 +162,5 @@ function addToCart(product) {
     };
 
     addItemToCart(newItem);
+    cart_quantity.innerHTML = getTotalItemsInCart();
 }

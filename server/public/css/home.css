@@ -22,6 +22,17 @@ body {
     text-decoration: none;
 }
 
+.main_btn:hover{
+    transition: 0.5s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.main_btn::after{
+    transition: 0.5s;
+    transform: scale(0.95);
+}
+
+
 .container {
     max-width: 1300px;
     margin:auto;
@@ -83,21 +94,6 @@ body {
 	text-decoration: underline;
 }
 
-
-.heading {
-    text-align: center;
-    margin: 0 auto 5px;
-    position: relative;
-    line-height: 60px;
-    color: #555;
-}
-
-hr{
-    width: 80%;
-    height: 5px;
-    background: linear-gradient(to right, white 0%, grey 50%, white 100%);
-    margin-bottom: 10px;
-}
 
 .first_section {
     background: radial-gradient(white, black);

@@ -1,3 +1,9 @@
+body {
+    /*font-family: 'Courier New', monospace;*/
+    font-family: Spectral, serif;
+    /*font-family: Oswald, sans-serif;*/
+    /*font-family: "Noto Sans", sans-serif;*/
+  }
 nav {
     height: 80px;
     position: relative;
@@ -89,7 +95,7 @@ nav ul li:last-child a {
 
 .shopping span{
     background: red;
-    border-radius: 50%;
+    border-radius: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,7 +106,8 @@ nav ul li:last-child a {
     left:7px;
     padding: 3px 10px;
     height: 20px;
-    width: 25px;
+    width: 20px;
+    font-size: 15px;
 } 
 .shopping i{
     position: relative;
@@ -228,7 +235,18 @@ body.no-scroll #content {
     background: color #1c1f25;;
     color: #fff;
 }
-/*
-iframe {
-    display: none;
-    }*/
+
+.heading {
+    text-align: center;
+    margin: 0 auto 5px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+
+hr{
+    width: 80%;
+    height: 5px;
+    background: linear-gradient(to right, white 0%, grey 50%, white 100%);
+    margin-bottom: 10px;
+}

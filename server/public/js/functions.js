@@ -10,6 +10,11 @@ export function saveCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
 
+export function getTotalItemsInCart() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    return cart.reduce((total, item) => total + item.quantity, 0);
+}
+
 // Add an item to the cart
 export function addItemToCart(item) {
     
@@ -31,7 +36,7 @@ export function addItemToCart(item) {
 // Clear the cart
 export function clearCart(tableBody) {
     localStorage.removeItem('cart');
-    //renderCart(tableBody);
+    renderCart(tableBody);
 }
 
 //Still deciding
@@ -47,7 +52,7 @@ export function removeItem(index) {
 }
 
 //this one will only be called in Cart.html
-export function renderCart(tableBody) {
+export function renderCart(tableBody, cart_quantity) {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     //const tableBody = document.getElementById("tableBody");
 
@@ -89,7 +94,7 @@ export function renderCart(tableBody) {
             <label>${item.quantity}</label>
             <button class = "increment" data-index-number = "${index}">+</button>`;
         
-        c7.innerText = `R${item.totalPrice.toFixed(2)}`;
+        c7.innerText = `R${item.totalPrice}`;
         
         total += parseFloat(item.totalPrice);
 
@@ -176,7 +181,8 @@ export function renderCart(tableBody) {
         totalCart.innerHTML = `<strong>R${newTotal.toFixed(2)}</strong>`;
     
         // Re-render the cart
-        renderCart(tableBody);
+        cart_quantity.innerHTML = getTotalItemsInCart();
+        renderCart(tableBody,cart_quantity);
     }
 
     function calculateCartTotal() {

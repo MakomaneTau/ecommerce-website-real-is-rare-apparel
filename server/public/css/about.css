@@ -1,4 +1,120 @@
-img{
+*{
+    margin: 0px 0px;
+}
+.store {
+    position: relative;
+}
+
+.store img {
+    display: block;
     width: 100%;
-    height: 700px;
+    height: 500px;
+    transition: 0.5s ease; /* Smooth transition for blur effect */
+}
+
+.store:hover img {
+    filter: blur(5px); /* Apply blur effect on hover */
+}
+
+.reveal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease; /* Smooth fade-in */
+    background-color: rgba(167, 167, 167, 0.5); /* Semi-transparent background */
+}
+
+.store:hover .reveal {
+    opacity: 1; /* Reveal overlay when hovering */
+}
+
+.reveal a {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    text-decoration: none; /* Remove underline for the link */
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Assuming you want an image + content layout */
+    gap: 20px; /* Adds spacing between items */
+    align-items: center; /* Align items vertically */
+    margin:20px 20px;
+}
+.profile { 
+    display: grid;
+    grid-template-columns: auto 1fr; /* Assuming you want an image + content layout */
+    gap: 16px; /* Adds spacing between items */
+    align-items: center; /* Align items vertically */
+    background-color: rgb(182, 182, 182);
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+
+.profile img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Ensures the image does not stretch */
+    border-radius: 50%; /* Makes the image circular */
+    margin: 20px;
+}
+
+.content {
+    margin: 20px;
+}
+.content a i{
+    font-size: 2em;
+    color: black;
+    opacity: 0.9;
+}
+
+.content a i:hover{
+    color: #fff;
+    transition: 0.5s;
+}
+
+.content a i:nth-child(1){
+    margin: 10px 20px;
+}
+.content h3{
+    margin: 0px;
+}
+
+h1{
+    text-align: center;
+}
+
+@media (max-width: 1090px) {
+    .content a i:nth-child(1){
+        margin: 10px 10px;
+    }
+    
+}
+
+@media (max-width: 970px) {
+    .content a i:nth-child(1) {
+        margin-left: 0px;
+    }
+
+    .content a i:nth-child(2) {
+        margin: 10px 5px;
+    }
+    .profile { 
+        display: grid;
+        gap: 10px; /* Adds spacing between items */
+        align-items: center; /* Align items vertically */
+    }
+    
 }

@@ -117,6 +117,14 @@ h1{
 
 .subtotal button:hover{
   transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.subtotal button:active {
+  transform: scale(0.95); /* Press down effect */
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5); /* Reduce shadow */
+  transition: 0.5s;
+
 }
 
 
@@ -196,6 +204,7 @@ h1{
 
   .subtotal button:hover{
     transform: scale(0);
+    transition: 0.5s;
   }
 }
 
@@ -206,9 +215,88 @@ h1{
   font-size: 20px;
   background-color: #fff;
 }
+
+.decrement:hover{
+  transform: scale(1.5);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+
+.decrement:active{
+  transform: scale(0.95);
+  transition: 0.5s;
+}
+
 .increment{
   margin-left : 10px;
   border:none;
   font-size: 20px;
   background-color: #fff;
+}
+
+.increment:hover{
+  transform: scale(1.5);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+
+.increment:active{
+  transition: 0.5s;
+  transform: scale(0.95);
+}
+
+.clear{
+  width: 10%;
+  height: 50px;
+  margin-top: 20px;
+  margin-left: 50px;
+  background: rgb(238, 52, 52);
+  border: none;
+  filter: drop-shadow(5px 5px 1px rgba(0, 0, 0, 0.25));
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.clear:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+
+.clear:active {
+  transform: scale(0.95); /* Press down effect */
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.5); /* Reduce shadow */
+  transition: 0.5s;
+
+}
+
+#empty-cart-message {
+  text-align: center;
+  margin: 20px;
+  margin-bottom: 20px;
+  font-size: 1.2em;
+  color: #555;
+}
+
+.empty-cart-image {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: float 2s infinite ease-in-out;
+}
+
+/* Simple floating animation for the image */
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
+.hidden {
+  display: none;
 }
