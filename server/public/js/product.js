@@ -1,8 +1,6 @@
 import { addItemToCart, getTotalItemsInCart } from './functions.js';
 
 let cart_quantity = document.querySelector(".quantity");
-
-
 const newproductImages = document.querySelector(".product-images");
 const productImageSlide = document.querySelector(".image-slider"); // Select image slider element
 const productDetails = document.querySelector(".product-details");
@@ -18,11 +16,23 @@ if (product && product.imageVariations.length > 0) {
     productImageSlide.style.backgroundImage = `url('${product.imageVariations[0]}')`;
 
     // Add product images to gallery
-    product.imageVariations.forEach(image => {
+    product.imageVariations.forEach((image, index) => {
         let newImage = document.createElement('img');
         newImage.classList.add('img');
+        if (index === 0) newImage.classList.add('active'); // Mark the first image as active
         newImage.src = image;
+        newImage.alt = `Product variation ${index + 1}`;
         newproductImages.appendChild(newImage);
+
+        // Add event listener to change the slider background on click
+        newImage.addEventListener('click', () => {
+            // Remove active class from all images
+            document.querySelectorAll('.product-images img').forEach(img => img.classList.remove('active'));
+            // Add active class to clicked image
+            newImage.classList.add('active');
+            // Update slider background
+            productImageSlide.style.backgroundImage = `url('${image}')`;
+        });
     });
 }
 
@@ -30,20 +40,8 @@ if (product && product.imageVariations.length > 0) {
 const discountPercentage = product && product.discount ? parseFloat(product.discount) / 100 : 0;
 const discountedPrice = product && product.actual_price ? product.actual_price * (1 - discountPercentage) : 0;
 
-// Create the product details section
-let newDetail = document.createElement('div');
-newDetail.classList.add('details');
-newDetail.innerHTML = `
-    <h2 class="product-brand">${product.name}</h2>
-    <p class="product-short-des">${product.shortDescription}</p>
-    <span class="product-price">R${discountedPrice.toFixed(2)}</span>
-    ${discountPercentage > 0 ? `<span class="product-actual-price">R${product.actual_price}</span>
-    <span class="product-discount">( ${product.discount} off )</span>` : ""}
-    <p class="product-sub-heading">Select size</p>
-`;
-
 if (product && product.sizeVariations.length > 0) {
-    product.sizeVariations.forEach(size => {
+    product.sizeVariations.forEach((size, index) => {
         let newSize = document.createElement('input');
         newSize.type = 'radio';
         newSize.name = 'size';
@@ -51,15 +49,17 @@ if (product && product.sizeVariations.length > 0) {
         newSize.id = `${size}-size`;
         newSize.hidden = true;
 
+        if (index === 0) {
+            newSize.checked = true; // Check the first size by default
+        }
+
         let newLabel = document.createElement('label');
         newLabel.htmlFor = `${size}-size`;
         newLabel.classList.add('size-radio-btn');
-        /*if (newSize.value === product.sizeVariations[0]) {
-            newLabel.checked = true; // Default to the first size
-        }*/
+        if (index === 0) {
+            newLabel.classList.add('check'); // Highlight the first size button
+        }
         newLabel.innerText = size.charAt(0).toUpperCase() + size.slice(1);
-
-        //newLabel.style.borderColor = `${color}`;
 
         newDetail.appendChild(newSize);
         newDetail.appendChild(newLabel);
@@ -68,11 +68,11 @@ if (product && product.sizeVariations.length > 0) {
 
 newDetail.innerHTML += `
     <p class="product-sub-heading">Select Color</p>
-`
+`;
 
 // Add color selection options
 if (product && product.colorVariations.length > 0) {
-    product.colorVariations.forEach(color => {
+    product.colorVariations.forEach((color, index) => {
         let newColor = document.createElement('input');
         newColor.type = 'radio';
         newColor.name = 'color';
@@ -80,33 +80,24 @@ if (product && product.colorVariations.length > 0) {
         newColor.id = `${color}-color`;
         newColor.hidden = true;
 
+        if (index === 0) {
+            newColor.checked = true; // Check the first color by default
+        }
+
         let newLabel = document.createElement('label');
         newLabel.htmlFor = `${color}-color`;
         newLabel.classList.add('color-radio-btn');
+        if (index === 0) {
+            newLabel.classList.add('check'); // Highlight the first color button
+        }
         newLabel.innerText = color.charAt(0).toUpperCase();
         newLabel.style.borderColor = `${color}`;
-           
+        newLabel.style.background = index === 0 ? color : 'none'; // Default the first color's background
 
         newDetail.appendChild(newColor);
         newDetail.appendChild(newLabel);
     });
 }
-
-newDetail.innerHTML += `
-    <br>
-    <button class="btn">Add to cart</button>
-`;
-
-// Append product details to the details section
-details.appendChild(newDetail);
-
-// Image slider functionality
-let activeImageSlide = 0;
-newproductImages.addEventListener('click', (event) => {
-    if (event.target.tagName === 'IMG') {
-        productImageSlide.style.backgroundImage = `url('${event.target.src}')`;
-    }
-});
 
 // Toggle size buttons
 const sizeBtns = document.querySelectorAll('.size-radio-btn');
@@ -120,11 +111,10 @@ sizeBtns.forEach((item, i) => {
     });
 });
 
-
-
 // Toggle color buttons
 const colorBtns = document.querySelectorAll('.color-radio-btn');
 let checkedColorBtn = 0;
+
 colorBtns.forEach((item, i) => {
     item.addEventListener('click', () => {
         colorBtns[checkedColorBtn].style.removeProperty('background');

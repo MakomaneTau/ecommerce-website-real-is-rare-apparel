@@ -35,22 +35,26 @@
     object-fit: cover;
     cursor: pointer;
 }
-
-.product-images img.active{
-    opacity: 0.5;  /*Not working wonder why 57:21 on video */
+.product-images img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    transition: transform 0.3s ease;
 }
 
+
+.product-images img.active {
+    opacity: 0.5 !important; /* Forces the rule to apply */
+}
 .details{
     width: 50%;
 }
 .details .product-brand{
     text-transform: capitalize;
-    font-size: 30px;
+    font-size: 1.5rem; /* Scalable font size */
 }
 
 .details .product-short-des{
-    font-size: 25px;
-    line-height: 30px;
+    font-size: 1.25rem;
+    line-height: 1.5;
     height: auto;
     margin: 15px 0 30px;
 }
@@ -150,5 +154,36 @@
     background: #383838;
     color: #fff;
 }
+
+.size-radio-btn:hover,
+.color-radio-btn:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow on hover */
+    transition: box-shadow 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    .product-details {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .image-slider, .details {
+        width: 100%;
+    }
+    .product-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        width: 100%; /* Full-width buttons for small screens */
+    }
+}
+
+
 
 /* Focus on styling later*/

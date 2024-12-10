@@ -118,3 +118,48 @@ h1{
     }
     
 }
+
+@media (max-width: 890px){
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr; /* Assuming you want an image + content layout */
+        gap: 30px; /* Adds spacing between items */
+        align-items: center; /* Align items vertically */
+        margin:20px 20px;
+    }
+}
+
+@media (max-width: 455px){
+    .profile { 
+        display: grid;
+        grid-template-columns: auto 1fr; /* Assuming you want an image + content layout */
+        gap: 5px; /* Adds spacing between items */
+        align-items: center; /* Align items vertically */
+        background-color: rgb(182, 182, 182);
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+        border-radius: 20px;
+    }
+    
+    .profile img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover; /* Ensures the image does not stretch */
+        border-radius: 50%; /* Makes the image circular */
+        margin: 5px;
+    }
+    .content {
+        margin: 5px;
+    }
+    .content a i{
+        font-size: 1.5em;
+        color: black;
+        opacity: 0.9;
+    }
+    .content a i:nth-child(1) {
+        margin-left: 0px;
+    }
+
+    .content a i:nth-child(2) {
+        margin: 10px 2px;
+    }
+}
