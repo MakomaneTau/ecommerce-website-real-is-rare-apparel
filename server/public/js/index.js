@@ -1,4 +1,16 @@
 
+
+const checkbox = document.getElementById("check");
+const body = document.body;
+
+checkbox.addEventListener("change", () => {
+    if (checkbox.checked) {
+        body.classList.add("no-scroll");
+    } else {
+        body.classList.remove("no-scroll");
+    }
+});
+
 let listProductHtml = document.querySelector('.home-row');
 
 

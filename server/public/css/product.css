@@ -3,7 +3,7 @@
     display: flex;
     padding: 20px 50px;
     justify-content: space-between;
-    background: rgb(196, 189, 189);
+    /*background: rgb(196, 189, 189);*/
 }
 
 .image-slider{
@@ -56,7 +56,7 @@
     font-size: 1.25rem;
     line-height: 1.5;
     height: auto;
-    margin: 15px 0 30px;
+    margin: 15px 0 15px;
 }
 
 .product-price{
@@ -80,7 +80,7 @@
 .product-sub-heading{
     font-size: 30px;
     text-transform: uppercase;
-    margin:60px 0 10px;
+    margin:30px 0 10px;
     font-weight: 300;
 }
 
@@ -146,7 +146,7 @@
     margin: 10px;
     margin-left: 0;
     line-height: 80px;
-    color: #fff;
+    color: black;
     cursor: pointer;
 }
 
@@ -176,11 +176,58 @@
     .btn {
         width: 100%;
     }
+    .size-radio-btn,
+    .color-radio-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 14px;
+        line-height: 50px;
+    }
+    .image-slider {
+        width: 100%; /* Adjust width for tablets */
+        height: 350px; /* Adjust height for tablets */
+        margin-bottom: 20px;
+    }
+
+    .product-images {
+        grid-template-columns: repeat(4, 1fr); /* Reduce the number of images per row */
+        height: 80px; /* Reduce height */
+    }
+
+    .product-images img {
+        height: 60px; /* Adjust image height */
+    }
+    .product-sub-heading{
+        font-size: 25px;
+        text-transform: uppercase;
+        margin:20px 0 10px;
+        font-weight: 300;
+    }
 }
 
 @media (max-width: 480px) {
     .btn {
         width: 100%; /* Full-width buttons for small screens */
+    }
+    .size-radio-btn,
+    .color-radio-btn {
+        width: 40px; /* Further reduce for small screens */
+        height: 40px;
+        font-size: 12px; /* Smaller font size */
+        line-height: 40px;
+    }
+    .image-slider {
+        width: 100%; /* Adjust width for tablets */
+        height: 250px; /* Adjust height for tablets */
+    }
+
+    .product-images {
+        grid-template-columns: repeat(4, 1fr); /* Reduce the number of images per row */
+        height: 80px; /* Reduce height */
+    }
+
+    .product-images img {
+        height: 50px; /* Smallest image height */
     }
 }
 

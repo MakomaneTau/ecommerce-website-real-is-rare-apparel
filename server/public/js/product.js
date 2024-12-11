@@ -40,6 +40,19 @@ if (product && product.imageVariations.length > 0) {
 const discountPercentage = product && product.discount ? parseFloat(product.discount) / 100 : 0;
 const discountedPrice = product && product.actual_price ? product.actual_price * (1 - discountPercentage) : 0;
 
+// Create the product details section
+let newDetail = document.createElement('div');
+newDetail.classList.add('details');
+newDetail.innerHTML = `
+    <h2 class="product-brand">${product.name}</h2>
+    <p class="product-short-des">${product.shortDescription}</p>
+    <span class="product-price">R${discountedPrice.toFixed(2)}</span>
+    ${discountPercentage > 0 ? `<span class="product-actual-price">R${product.actual_price}</span>
+    <span class="product-discount">( ${product.discount} off )</span>` : ""}
+    <p class="product-sub-heading">Select size</p>
+`;
+
+// Add size selection options
 if (product && product.sizeVariations.length > 0) {
     product.sizeVariations.forEach((size, index) => {
         let newSize = document.createElement('input');
@@ -99,6 +112,14 @@ if (product && product.colorVariations.length > 0) {
     });
 }
 
+newDetail.innerHTML += `
+    <br>
+    <button class="btn">Add to cart</button>
+`;
+
+// Append product details to the details section
+details.appendChild(newDetail);
+
 // Toggle size buttons
 const sizeBtns = document.querySelectorAll('.size-radio-btn');
 let checkedBtn = 0;
@@ -128,24 +149,29 @@ colorBtns.forEach((item, i) => {
 // Add event listener for 'Add to Cart' button
 newDetail.querySelector('.btn').addEventListener('click', () => addToCart(product));
 
-
 function addToCart(product) {
     if (!product || !product.name || !product.actual_price) {
         console.error("Invalid product object");
         return;
     }
 
+    // Get selected size and color
+    const selectedSize = document.querySelector('input[name="size"]:checked');
+    const selectedColor = document.querySelector('input[name="color"]:checked');
+
+    if (!selectedSize || !selectedColor) {
+        alert("Please select both a size and a color.");
+        return;
+    }
+
     // Calculate the final price based on the discount
-    const discountPercentage = product.discount ? parseFloat(product.discount) / 100 : 0;
     const finalPrice = product.actual_price * (1 - discountPercentage);
 
     const newItem = {
         name: product.name,
         image: product.imageVariations[0], // Main product image
-        size: checkedBtn,
-        size_name: product.sizeVariations[checkedBtn],
-        color: checkedColorBtn,
-        color_name: product.colorVariations[checkedColorBtn],
+        size: selectedSize.value,
+        color: selectedColor.value,
         price: finalPrice.toFixed(2), // Discounted price (if any)
         quantity: 1, // Initial quantity
         totalPrice: finalPrice.toFixed(2), // Total price for this item
