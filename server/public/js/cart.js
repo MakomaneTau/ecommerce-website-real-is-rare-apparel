@@ -1,7 +1,6 @@
-// cart.js
-import {saveCart, renderCart,clearCart,getTotalItemsInCart} from "./functions.js";
+import { saveCart, renderCart, clearCart, getTotalItemsInCart } from "./functions.js";
 
-let cart_quantity = document.querySelector(".quantity");
+let cart_quantity = document.querySelectorAll(".quantity");
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const tableBody = document.getElementById("tableBody");
@@ -13,38 +12,37 @@ const subtotalSection = document.querySelector(".subtotal");
 // Function to toggle visibility of cart content
 function toggleCartVisibility(cart) {
   if (cart.length === 0) {
-      cartContent.classList.add("hidden");
-      subtotalSection.classList.add("hidden");
-      clear.classList.add("hidden");
-      if (emptyCartMessage) emptyCartMessage.classList.remove("hidden"); // Show empty cart message if present
+    if (cartContent) cartContent.classList.add("hidden");
+    if (subtotalSection) subtotalSection.classList.add("hidden");
+    if (clear) clear.classList.add("hidden");
+    if (emptyCartMessage) emptyCartMessage.classList.remove("hidden"); // Show empty cart message if present
   } else {
-      cartContent.classList.remove("hidden");
-      subtotalSection.classList.remove("hidden");
-      if (emptyCartMessage) emptyCartMessage.classList.add("hidden"); // Hide empty cart message
+    if (cartContent) cartContent.classList.remove("hidden");
+    if (subtotalSection) subtotalSection.classList.remove("hidden");
+    if (clear) clear.classList.remove("hidden");
+    if (emptyCartMessage) emptyCartMessage.classList.add("hidden"); // Hide empty cart message
   }
 }
 
-clear.addEventListener("click", () => {
-
-  clearCart(tableBody);
-  cart_quantity.innerHTML = getTotalItemsInCart();
-  toggleCartVisibility([]);
-});
-
-
-/*
-// Get the current pathname
-const path = window.location.pathname;
-
-// Extract the file name (last part of the path)
-const pageName = path.substring(path.lastIndexOf('/') + 1);
-
-console.log("Page Name:", pageName);
-*/
+if (clear) {
+  clear.addEventListener("click", () => {
+    clearCart(tableBody);
+    if (cart_quantity) {
+      cart_quantity[0].innerHTML = getTotalItemsInCart();
+      cart_quantity[1].innerHTML = getTotalItemsInCart();
+    }
+    toggleCartVisibility([]);
+  });
+} else {
+  console.error("Element '.clear' not found.");
+}
 
 // Render heading and cart contents on page load
 window.addEventListener("DOMContentLoaded", () => {
-
-  renderCart(tableBody,cart_quantity);
+  if (tableBody && cart_quantity) {
+    renderCart(tableBody, cart_quantity);
+  } else {
+    console.error("Missing elements for rendering cart.");
+  }
   toggleCartVisibility(cart);
 });

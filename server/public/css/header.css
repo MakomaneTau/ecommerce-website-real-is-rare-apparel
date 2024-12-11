@@ -1,211 +1,154 @@
-/* Define global variables for colors and consistent theming */
-:root {
-    --primary-color: #560bad;
-    --secondary-color: #1c1f25;
-    --accent-color: red;
-    --text-color: #fff;
-    --background-color: #dadada;
-}
-
-/* Body styling */
 body {
-    font-family: Spectral, serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    width: 100%;
+    margin: 0; /* Ensure no default margin on the body */
 }
 
-/* Navigation bar styling */
-nav {
+#header {
+    display: flex;
     height: 80px;
-    position: relative;
-    border-bottom: outset;
-    margin-bottom: 5px;
-    background-color: black;
+    align-items: center;
+    justify-content: space-between; /* Ensure space between logo and navbar */
+    padding: 0 20px; /* Add consistent padding on both sides */
+    background: #1a1a1a;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: sticky; /* Makes the header sticky */
+    top: 0; /* Keeps it at the top of the viewport */
+    z-index: 999; /* Ensures it stays above other content */
 }
 
-nav img {
+#navbar {
+    display: flex;
+    justify-content: flex-end; /* Align navbar items to the right */
+    width: 100%; /* Span the navbar across available width */
+}
+
+#header img {
     width: 150px;
     height: 60px;
-    position: absolute;
-    top: 10px;
-    left: 10%;
 }
 
-nav ul {
-    float: right;
-    margin-right: 25px;
+#navbar ul {
+    display: flex; /* Ensure items are in a horizontal row */
+    margin: 0; /* Reset default ul margin */
+    padding: 0; /* Reset default ul padding */
+    list-style: none; /* Remove bullets */
 }
 
-nav ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 15px;
-}
-
-nav ul li a {
+#navbar li {
+    padding: 0 20px; /* Add spacing between items */
     position: relative;
-    color: var(--text-color);
-    font-size: 18px;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 5px 0;
 }
 
-nav ul li a:before {
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    position: relative;
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+#navbar li a::before {
     position: absolute;
     content: '';
     left: 0;
-    bottom: 0;
+    bottom: -4px;
     height: 3px;
     width: 100%;
-    background: var(--text-color);
+    background: wheat; /* Underline color */
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.4s linear;
 }
-
-nav ul li a:hover:before {
+#navbar li a:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-label #btn,
-label #cancel {
-    color: var(--text-color);
-    font-size: 30px;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
+#navbar li a:hover,
+#navbar li a.active {
+    color: wheat;
 }
 
-#check {
-    display: none;
-}
-
-/* Shopping cart notification bubble */
-.shopping span {
-    background: var(--accent-color);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--text-color);
+#navbar li a.active::after {
+    content: "";
     position: absolute;
-    top: 20px;
-    left: 7px;
-    padding: 3px 10px;
-    height: 20px;
-    width: 20px;
+    left: 0;
+    bottom: -4px;
+    width: 40%;
+    height: 3px;
+    background: wheat;
+    transition: width 0.3s ease;
+}
+
+.quantity{
     font-size: 15px;
 }
 
-/* Media query for medium-sized screens */
-@media (max-width: 1118px) {
-    nav img {
-        left: 8%;
-        top: 10px;
-    }
+#mobile{
+    display: none;
+    align-items:center ;
 }
 
-/* Media query for small screens */
-@media (max-width: 860px) {
-    label #btn {
-        display: block;
-        margin-right: 80px;
-    }
+#close{
+    display: none;
+}
 
-    nav ul {
+
+@media (max-width:807px){
+    #navbar{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
         position: fixed;
-        width: 100%;
+        top: 0;
+        right: -400px;
         height: 100vh;
-        background: black;
-        top: 80px;
-        left: -200%;
-        text-align: center;
-        transition: all 0.5s;
-        overflow-y: auto;
+        width: 300px; 
+        background-color: #1a1a1a;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.2);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+        z-index: 999; /* Ensures the navbar appears above other elements */
+        overflow-y: auto; /* Allows scrolling for longer menus */
     }
-
-    nav ul li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
+    #navbar li{
+        list-style: none; /* Remove bullets */
+        margin-bottom: px;
     }
-
-    nav ul li a {
+    .quantity{
         font-size: 20px;
-        color: var(--text-color);
+    }
+    #mobile{
+        display: flex;
+        align-items:center ;
     }
 
-    #check:checked ~ ul {
-        left: 0;
+    #mobile i{
+        color: #fff;
+        font-size: 24px;
+        padding-left: 20px;
     }
 
-    #check:checked ~ label #btn {
+    #navbar.active{
+        right: 0px;
+    }
+
+    #close{
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #fff;
+        font-size: 24px;
+    }
+    #lg-bag{
         display: none;
     }
-
-    #check:checked ~ label #cancel {
-        display: block;
-    }
-
-    body.no-scroll {
-        overflow: hidden;
-    }
 }
 
-/* Sliding card */
-.card {
-    position: fixed;
-    top: 0;
-    left: 100%;
-    width: 80%;
-    max-width: 500px;
-    background-color: var(--background-color);
-    border-left: 1px solid var(--primary-color);
-    height: 100vh;
-    transition: 0.5s;
-}
 
-.active .card {
-    left: calc(100% - 80%);
-}
-
-.card h1 {
-    color: var(--primary-color);
-    font-weight: 300;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-}
-
-.card .checkout {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.card .checkout div {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-    height: 70px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.card .checkout div:nth-child(2) {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-}
 
 /* Section headings */
 .heading {

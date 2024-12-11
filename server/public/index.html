@@ -12,42 +12,34 @@
         <title>Real is Rare</title>
     </head>
     <body>
-        <div class="first_section">
-            <nav>
-                <input type="checkbox" id="check">
-                <label for="check">
-                    <i class="fas fa-bars" id="btn"></i>
-                    <i class="fas fa-times" id="cancel"></i>
-                </label>
-                <!--<label id="logo"> Real is Rare  </label> Use image here -->
-                <img src="images/logo.jpg" alt="Real is Rare logo">
-                <ul>
-                    <li><a href="index.html"> Home </a></li>
+        <section id="header">
+            <a href="#"><img src="Images/logo.jpg" class="logo"></a>
+
+            <div>
+                <ul id="navbar">
+                    <li><a class="active" href="index.html"> Home </a></li>
                     <li><a href="Shop.html"> Shop Now </a></li>
                     <li><a href="gallery.html"> Gallery </a></li>
                     <li><a href="about.html"> About Us </a></li>
                     <li><a href="contact.html"> Contact Us </a></li>
-                    <!--<i class="fa fa-shopping-cart fa-3x"></i></a><span class="itemsInCart">5</span>-->
-                    <!--<li class="shopping"><a href="cart.html"><i class="fa-solid fa-bag-shopping"><span class="quantity">0</span></i> </a></li>-->
-                    <li><a href="cart.html">
-                        <div class= "shopping">
-                            <i class="fa-solid fa-bag-shopping"></i>
-                            <span class="quantity">0</span>
-                        </div>
-                        
-                    </a></li>
+                    <li id="lg-bag"><a href="cart.html"><i class="fa-solid fa-bag-shopping"><span class="quantity"> ( 0 )</span></i></a></li>
+                    <a href="#" id="close"><i class="fas fa-times"></i></a>
                 </ul>
-            </nav>
-            <div class="container">
-                <div class="row">
-                    <div class="col-2">
-                        <h1>Real is Rare</h1>
-                        <p>Some text!!</p>
-                        <a href="shop.html" class="main_btn">View Catalogue <i class="fa-solid fa-memo"></i></a>
-                    </div>
-                    <div class="col-2">
-                        <img src="images/hoodies.jpg" alt="Hoodies">
-                    </div>
+            </div>
+            <div id="mobile">
+                <a href="cart.html"><i class="fa-solid fa-bag-shopping"><span class="quantity"> ( 0 ) </span></i></a>
+                <i class="fas fa-bars" id="bar"></i>
+            </div>
+        </section>
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <h1>Real is Rare</h1>
+                    <p>Some text!!</p>
+                    <a href="shop.html" class="main_btn">View Catalogue <i class="fa-solid fa-memo"></i></a>
+                </div>
+                <div class="col-2">
+                    <img src="images/hoodies.jpg" alt="Hoodies">
                 </div>
             </div>
         </div>
@@ -80,6 +72,7 @@
         <script src="js/index.js" type="module"></script>
         <script src="js/shop.js" type="module"></script>
         <script src="js/product.js" type="module"></script>
+        <script src="js/practice.js" type="module"></script>
 
         
     </body>

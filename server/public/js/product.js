@@ -1,10 +1,11 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-import { addItemToCart, clearCart } from './functions.js';
+import { addItemToCart, getTotalItemsInCart } from './functions.js';
 
 const newproductImages = document.querySelector(".product-images");
 const productImageSlide = document.querySelector(".image-slider"); // Select image slider element
 const productDetails = document.querySelector(".product-details");
 const details = document.querySelector('.details');
+let cart_quantity = document.querySelectorAll(".quantity");
 
 // Check if productData is stored in localStorage
 const productData = localStorage.getItem('productData');
@@ -143,6 +144,15 @@ function addToCart(product) {
         return;
     }
 
+    // Get selected size and color
+    const selectedSize = document.querySelector('input[name="size"]:checked');
+    const selectedColor = document.querySelector('input[name="color"]:checked');
+
+    if (!selectedSize || !selectedColor) {
+        alert("Please select both a size and a color.");
+        return;
+    }
+
     // Calculate the final price based on the discount
     const discountPercentage = product.discount ? parseFloat(product.discount) / 100 : 0;
     const finalPrice = product.actual_price * (1 - discountPercentage);
@@ -160,4 +170,6 @@ function addToCart(product) {
     };
 
     addItemToCart(newItem);
+    cart_quantity[0].innerHTML = getTotalItemsInCart();
+    cart_quantity[1].innerHTML = getTotalItemsInCart();
 }
