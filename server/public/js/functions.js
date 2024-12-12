@@ -1,3 +1,5 @@
+import { toggleCartVisibility } from "./cart.js";
+
 export function loadCart() {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     return cart;
@@ -54,6 +56,10 @@ export function removeItem(index) {
     localStorage.setItem('cart', JSON.stringify(cart)); // Save updated cart
     if (document.getElementById('tableBody')) {
         let tableBody = document.getElementById('tableBody');
+        let cart_quantity = document.querySelectorAll(".quantity");
+        cart_quantity[0].innerHTML = getTotalItemsInCart();  // Update first quantity
+        cart_quantity[1].innerHTML = getTotalItemsInCart();  // Update second quantity
+
         renderCart(tableBody);  // Re-render cart
     }
 }
@@ -115,7 +121,7 @@ export function renderCart(tableBody, cart_quantity) {
 
     let decrementButtons = document.querySelectorAll('.decrement');
     let incrementButtons = document.querySelectorAll('.increment');
-    let cart_quantity = document.querySelectorAll(".quantity");
+
 
     decrementButtons.forEach((button) => {
         button.addEventListener('click', (event) => {
@@ -183,6 +189,8 @@ export function renderCart(tableBody, cart_quantity) {
         const total = calculateCartTotal();
         const subtotal = document.getElementById('sub-total');
         const totalCart = document.getElementById('total');
+
+        
     
         if (subtotal) {
             subtotal.innerText = `R${total.toFixed(2)}`;
@@ -194,9 +202,9 @@ export function renderCart(tableBody, cart_quantity) {
     
         // Update the cart quantity display (refreshed from the new cart data)
 
-        
-            cart_quantity[0].innerHTML = getTotalItemsInCart();  // Update first quantity
-            cart_quantity[1].innerHTML = getTotalItemsInCart();  // Update second quantity
+        let cart_quantity = document.querySelectorAll(".quantity");
+        cart_quantity[0].innerHTML = getTotalItemsInCart();  // Update first quantity
+        cart_quantity[1].innerHTML = getTotalItemsInCart();  // Update second quantity
 
     
         // Re-render the cart to reflect changes in the table
@@ -209,4 +217,9 @@ export function renderCart(tableBody, cart_quantity) {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         return cart.reduce((total, item) => total + (item.quantity * item.price), 0);
     }
+
+    if(getTotalItemsInCart() === 0){
+        toggleCartVisibility(loadCart());
+    }
+
 }

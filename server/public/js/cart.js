@@ -10,7 +10,7 @@ const cartContent = document.querySelector(".cart");
 const subtotalSection = document.querySelector(".subtotal");
 
 // Function to toggle visibility of cart content
-function toggleCartVisibility(cart) {
+export function toggleCartVisibility(cart) {
   if (cart.length === 0) {
     if (cartContent) cartContent.classList.add("hidden");
     if (subtotalSection) subtotalSection.classList.add("hidden");
