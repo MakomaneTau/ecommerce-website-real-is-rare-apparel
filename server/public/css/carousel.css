@@ -12,6 +12,7 @@
     display: none;
 }
 
+
 img.displaySlide{
     display: block;
     animation-name: fade;
@@ -45,4 +46,11 @@ img.displaySlide{
 @keyframes fade{
     from {opacity:.5}
     to {opacity: 1;}
+}
+
+@media (max-width:600px){
+    .slider img{
+        width: 100%;
+        height: 300px;
+    }
 }
