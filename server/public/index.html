@@ -4,9 +4,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-       <link href="css/home.css" rel="stylesheet" type="text/css">
-       <link href="css/footer.css" rel="stylesheet" type="text/css">
-       <link href="css/header.css" rel="stylesheet" type="text/css">
+        <link href="css/home.css" rel="stylesheet" type="text/css">
+        <link href="css/footer.css" rel="stylesheet" type="text/css">
+        <link href="css/header.css" rel="stylesheet" type="text/css">
+        <link href="css/carousel.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="font-awesome/css/all.css">
         
         <title>Real is Rare</title>
@@ -17,8 +18,28 @@
 
             <div>
                 <ul id="navbar">
-                    <li><a href="index.html"> Home </a></li>
-                    <li><a class="active" href="Shop.html"> Shop Now </a></li>
+                    <li><a class="active" href="index.html"> Home </a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">Shop Now <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown_menu">
+                            <ul>
+                                <li><a href="#">Tops</a></li>
+                                <li><a href="#">Pants</a></li>
+                                <li><a href="#">Hoodies</a></li>
+                                <li>
+                                    <a href="#" class="dropdown-toggle">Accessories <i class="fas fa-caret-down"></i></a>
+                                    <div class="dropdown_menu-1">
+                                        <ul>
+                                            <li><a href="#">Hats</a></li>
+                                            <li><a href="#">Socks</a></li>
+                                            <li><a href="#">Hoodie</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
                     <li><a href="gallery.html"> Gallery </a></li>
                     <li><a href="about.html"> About Us </a></li>
                     <li><a href="contact.html"> Contact Us </a></li>
@@ -30,19 +51,33 @@
                 <a href="cart.html"><i class="fa-solid fa-bag-shopping"><span class="quantity">0</span></i></a>
                 <i class="fas fa-bars" id="bar"></i>
             </div>
+
         </section>
+
+
         <div class="container">
             <div class="row">
                 <div class="col-2">
                     <h1>Real is Rare</h1>
                     <p>Some text!!</p>
-                    <a href="shop.html" class="main_btn">View Catalogue <i class="fa-solid fa-memo"></i></a>
+                    <a href="shop.html" class="main_btn">View Collections <i class="fa-solid fa-memo"></i></a>
                 </div>
                 <div class="col-2">
                     <img src="images/hoodies.jpg" alt="Hoodies">
                 </div>
             </div>
         </div>
+
+        <section class="slider">
+            <div class="slides">
+                <img class="slide" src="Images/cargo_pants.jpg" alt="">
+                <img class="slide" src="Images/t-shirts.jpg" alt="">
+                <img class="slide" src="Images/hoodies.jpg" alt="">
+            </div>
+            <button class="prev">&#10094</button>
+            <button class="next">&#10095</button>
+        </section>
+
         <div class="small-container">
             <h2 class="heading">Featured</h2>
             <hr/>
@@ -59,9 +94,9 @@
             </div>
             <div class="footerNav">
                 <ul>
-                    <li><a href="css/index.html"> Home </a></li>
-                    <li><a href="css/gallery.html"> Gallery </a></li>
-                    <li><a href="css/about.html"> About Us </a></li>
+                    <li><a href="index.html"> Home </a></li>
+                    <li><a href="gallery.html"> Gallery </a></li>
+                    <li><a href="about.html"> About Us </a></li>
                     <li><a href="contact.html"> Contact Us </a></li>
                 </ul>
             </div>
@@ -70,9 +105,8 @@
             </div>
         </footer>
         <script src="js/index.js" type="module"></script>
-        <script src="js/shop.js" type="module"></script>
-        <script src="js/product.js" type="module"></script>
-        <script src="js/practice.js" type="module"></script>
+        <script src="js/common.js" type="module"></script>
+        <script src="js/slider.js" type="module"></script>
 
         
     </body>

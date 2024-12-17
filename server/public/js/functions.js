@@ -13,12 +13,6 @@ export function saveCart(cart) {
 export function getTotalItemsInCart() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    -
-
-    // Log the cart contents for debugging
-    console.log('Cart:', cart);
-    console.log('Cart:', cart.length);
-
     return cart.reduce((total, item) => {
         // Ensure each item has a quantity property and it's a valid number
         if (item && typeof item.quantity === 'number') {

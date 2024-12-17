@@ -10,7 +10,7 @@ let cart_quantity = document.querySelectorAll(".quantity");
 // Check if productData is stored in localStorage
 const productData = localStorage.getItem('productData');
 const product = productData ? JSON.parse(productData) : null;
-console.log(product);
+//console.log(product);
 
 if (product && product.imageVariations.length > 0) {
     // Set initial slider background image

@@ -28,7 +28,6 @@ body {
 }
 
 #navbar ul {
-    display: flex; /* Ensure items are in a horizontal row */
     margin: 0; /* Reset default ul margin */
     padding: 0; /* Reset default ul padding */
     list-style: none; /* Remove bullets */
@@ -37,6 +36,7 @@ body {
 #navbar li {
     padding: 0 20px; /* Add spacing between items */
     position: relative;
+    list-style: none; /* Remove bullets */
 }
 
 #navbar li a {
@@ -70,7 +70,7 @@ body {
     color: wheat;
 }
 
-#navbar li a.active::after {
+#navbar > li > a.active::after {
     content: "";
     position: absolute;
     left: 0;
@@ -94,6 +94,73 @@ body {
     display: none;
 }
 
+/* Section headings */
+.heading {
+    text-align: center;
+    margin: 0 auto 5px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+
+hr {
+    width: 80%;
+    height: 5px;
+    background: linear-gradient(to right, white 0%, grey 50%, white 100%);
+    margin-bottom: 10px;
+}
+
+.dropdown_menu {
+    position: absolute;
+    left: 0;
+    top: 100%; /* Align below the parent element */
+    background-color: black;
+    z-index: 999; /* Ensure it appears above other elements */
+    display: none;
+}
+.dropdown_menu > ul{
+    margin: 10px;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.dropdown_menu > ul > li{
+    width: 150px; 
+    margin: 20px 0px;
+}
+
+
+
+.dropdown_menu > ul > li:last-child {
+    border-bottom: none; /* Remove line from the last item */
+}
+
+.fas{
+    float: right;
+    margin-left: 10px;
+    padding-top: 3px;
+}
+
+.dropdown_menu-1{
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 90%;
+    background-color: #1a1a1a;
+}
+.dropdown_menu-1 > ul > li{
+    width: 150px; 
+    margin: 20px 0px;
+}
+.dropdown_menu-1 > ul > li:last-child {
+    border-bottom: none; /* Remove line from the last item */
+
+}
+
+.dropdown_menu.active, .dropdown_menu-1.active {
+    display: block; /* Show menu when active */
+}
+
 
 @media (max-width:807px){
     #navbar{
@@ -108,14 +175,17 @@ body {
         width: 300px; 
         background-color: #1a1a1a;
         box-shadow: 0 40px 60px rgba(0, 0, 0, 0.2);
-        padding: 80px 0 0 10px;
         transition: 0.3s;
-        z-index: 999; /* Ensures the navbar appears above other elements */
-        overflow-y: auto; /* Allows scrolling for longer menus */
+        z-index: 999; 
+        overflow-y: auto;
     }
-    #navbar li{
-        list-style: none; /* Remove bullets */
-        margin-bottom: px;
+    #navbar > li{
+        list-style: none;
+        padding-bottom: 1px;
+        margin: 20px;
+    }
+    #navbar > li:first-child{
+        margin-top: 80px;
     }
     .quantity{
         font-size: 15px;
@@ -146,22 +216,58 @@ body {
     #lg-bag{
         display: none;
     }
+
+    /*#navbar > li:nth-child(2){
+        margin-bottom: 0px;
+    }*/
+    
+    .dropdown_menu {
+        position: relative;
+        left: 0;
+        top: 0px;
+        background-color: black;
+        display: none;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 5px 0;
+    }
+    .dropdown_menu-1{
+        display: none;
+        position: relative;
+        top: 0;
+        left: 0;
+        background-color: #1a1a1a;
+        padding: 5px 0;
+    }
+
+    .dropdown_menu > ul > li{
+        margin: 20px 0px;
+        padding: 0px;
+        left:0px;
+        border-bottom: none;
+    }
+
+    .dropdown_menu >  ul > li:first-child {
+        margin-top: 10px; /* Only apply margin to the first child inside .dropdown_menu*/
+
+    }
+    .dropdown_menu-1 > ul > li{
+        margin: 20px 0px;
+        padding: 0px;
+        left:0px;
+        border-bottom: none;
+    }
+
+    .dropdown_menu-1 >  ul > li:first-child {
+        margin-top: 5px; /* Only apply margin to the first child inside .dropdown_menu*/
+
+    }
+    .dropdown_menu-1 >  ul > li:last-child {
+        margin-bottom: 5px; /* Only apply margin to the first child inside .dropdown_menu*/
+
+    }
+
 }
 
 
 
-/* Section headings */
-.heading {
-    text-align: center;
-    margin: 0 auto 5px;
-    position: relative;
-    line-height: 60px;
-    color: #555;
-}
-
-hr {
-    width: 80%;
-    height: 5px;
-    background: linear-gradient(to right, white 0%, grey 50%, white 100%);
-    margin-bottom: 10px;
-}

@@ -21,7 +21,27 @@
             <div>
                 <ul id="navbar">
                     <li><a href="index.html"> Home </a></li>
-                    <li><a class="active" href="Shop.html"> Shop Now </a></li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">Shop Now <i class="fas fa-caret-down"></i></a>
+                        <div class="dropdown_menu">
+                            <ul>
+                                <li><a href="#">Tops</a></li>
+                                <li><a href="#">Pants</a></li>
+                                <li><a href="#">Hoodies</a></li>
+                                <li>
+                                    <a href="#" class="dropdown-toggle">Accessories <i class="fas fa-caret-down"></i></a>
+                                    <div class="dropdown_menu-1">
+                                        <ul>
+                                            <li><a href="#">Hats</a></li>
+                                            <li><a href="#">Socks</a></li>
+                                            <li><a href="#">Hoodie</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    
                     <li><a href="gallery.html"> Gallery </a></li>
                     <li><a href="about.html"> About Us </a></li>
                     <li><a href="contact.html"> Contact Us </a></li>
@@ -33,6 +53,7 @@
                 <a href="cart.html"><i class="fa-solid fa-bag-shopping"><span class="quantity">0</span></i></a>
                 <i class="fas fa-bars" id="bar"></i>
             </div>
+
         </section>
 
         <section class="product-details">
@@ -66,10 +87,7 @@
         </footer>
         
         <script type="module" src="js/product.js"></script>
-        <script type="module" src="js/cart.js" defer></script>
-        <script type="module" src="js/index.js"></script>
-        <script type="module" src="js/shop.js"></script>
-        <script src="js/practice.js" type="module"></script>
+        <script type="module" src="js/common.js"></script>
 
     </body>
 </html>

@@ -8,6 +8,9 @@ const pantsRow = document.getElementById('pants');
 const accessoriesRow = document.getElementById('accessories');
 const setsRow = document.getElementById('sets');
 
+const params = new URLSearchParams(window.location.search);
+const itemName = params.get("item"); // Get the 'item' parameter
+
 // Lists to hold products for each category
 let listTops = [];
 let listPants = [];
@@ -17,6 +20,9 @@ let listSets = [];
 // Function to add products to the HTML for a specific category
 const addProductsToHTML = (productList, rowElement) => {
     if (!rowElement || productList.length === 0) return; // Check if row exists and has products
+
+    let heading = document.querySelector(".heading");
+    heading.innerHTML = `${itemName}`;
 
     rowElement.innerHTML = ''; // Clear previous content
     productList.forEach(product => {
@@ -51,43 +57,57 @@ const addProductsToHTML = (productList, rowElement) => {
     });
 };
 
+
+
 // Function to fetch JSON data for all categories
 const fetchDataForCategories = () => {
     // Fetch tops data
-    fetch('js/json/tops.json')
+    if(itemName === "Tops"){
+        fetch('js/json/tops.json')
         .then(response => response.json())
         .then(data => {
             listTops = data;
             addProductsToHTML(listTops, topsRow); // Call function to render tops
         })
         .catch(error => console.error('Error fetching tops data:', error));
+    }
+    
 
     // Fetch pants data
-    fetch('js/json/pants.json')
+    if(itemName === "Pants"){
+        fetch('js/json/pants.json')
         .then(response => response.json())
         .then(data => {
             listPants = data;
             addProductsToHTML(listPants, pantsRow); // Call function to render pants
         })
         .catch(error => console.error('Error fetching pants data:', error));
+    }
+    
 
     // Fetch accessories data
-    fetch('js/json/accessories.json')
+    if(itemName === "Accessories"){
+        fetch('js/json/accessories.json')
         .then(response => response.json())
         .then(data => {
             listAccessories = data;
             addProductsToHTML(listAccessories, accessoriesRow); // Call function to render accessories
         })
         .catch(error => console.error('Error fetching accessories data:', error));
+    }
+    
 
     // Fetch sets data
-    fetch('js/json/sets.json')
+    if(itemName === "Sets"){
+        fetch('js/json/sets.json')
         .then(response => response.json())
         .then(data => {
             listSets = data;
             addProductsToHTML(listSets, setsRow); // Call function to render sets
         })
         .catch(error => console.error('Error fetching sets data:', error));
+    }
+
 };
 
 // Wait for DOM content to load before running the script
