@@ -39,6 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
             // Get the next sibling dropdown menu
             const dropdownMenu = toggle.nextElementSibling;
 
+            // Deactivate all other dropdown menus of type `.dropdown_menu-1`
+            document.querySelectorAll(".dropdown_menu-1").forEach(menu => {
+                if (menu !== dropdownMenu) {
+                    menu.classList.remove("active");
+                }
+            });
+
             // Toggle the clicked dropdown menu
             dropdownMenu.classList.toggle("active");
         });
@@ -61,9 +68,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Add click event listener to each item
     dropdownItems.forEach(item => {
         item.addEventListener("click", (event) => {
-            // Check if the clicked item is "Accessories" (or any other item you want to exclude)
-            if (item.textContent.trim() === "Accessories") {
-                event.preventDefault(); // Prevent the action for "Accessories"
+            // Check if the clicked item is "Pants" or "Tops"
+            if (item.textContent.trim() === "Pants" || item.textContent.trim() === "Tops") {
+                event.preventDefault(); // Prevent the action for these items
                 return; // Exit the function without doing anything
             }
 
@@ -74,4 +81,23 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = `shop.html?item=${encodeURIComponent(itemName)}`;
         });
     });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(entries => {
+        // Loop over the entries
+        entries.forEach(entry => {
+          // If the element is visible
+          if (entry.isIntersecting) {
+            // Add the animation class
+            entry.target.classList.add('image-animation');
+          }
+        });
+      });
+      
+      const viewbox = document.querySelectorAll('.scroll');
+      viewbox.forEach(obj => {
+        observer.observe(obj);
+      });
 });

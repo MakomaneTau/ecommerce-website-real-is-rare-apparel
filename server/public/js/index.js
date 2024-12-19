@@ -24,14 +24,14 @@ document.addEventListener("DOMContentLoaded", () => {
             listProducts.forEach(product => {
                 let newProduct = document.createElement('div');
                 console.log(product);
-                newProduct.classList.add('col-4');
+                newProduct.classList.add('scroll', 'col-4');
 
                 const discountPercentage = parseFloat(product.discount) / 100;
                 const discountedPrice = product.actual_price * (1 - discountPercentage);
                 const discountClass = discountPercentage === 0 ? "no-discount" : "";
 
                 newProduct.innerHTML = `
-                    <div class="product-image ${discountClass}">
+                    <div class="product-image ${discountClass} scroll">
                         <span class="discount-tag">${product.discount} off</span>
                         <img src="${product.imageVariations[0]}" alt="${product.name}">
                     </div>
