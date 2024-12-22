@@ -1,0 +1,39 @@
+[
+    {
+      "productId": 1,
+      "discount" : "50%",
+      "name": "Real Social Club T-Shirt",
+      "actual_price": 199.99,
+      "imageVariations" : ["../Images/img35.jpg","../Images/img36.jpg","../Images/img46.jpg","../Images/img57.jpg"],
+      "colorVariations": ["black", "white"],
+      "sizeVariations": ["s", "m", "l"]
+    },
+    {
+      "productId": 2,
+      "discount" : "0%",
+      "name": "Starlight T-Shirt",
+      "actual_price": 249.99,
+      "imageVariations" : ["../Images/img32.jpg","../Images/img43.jpg","../Images/img32.jpg","../Images/img43.jpg"],
+      "colorVariations": ["black","white","red"],
+      "sizeVariations": ["xl", "m"]
+    },
+    {
+      "productId": 3,
+      "discount" : "0%",
+      "name": "Bear Graphic T-Shirt",
+      "actual_price": 299.99,
+      "imageVariations" : ["../Images/img45.jpg","../Images/img45.jpg", "../Images/img45.jpg","../Images/img45.jpg"],
+      "colorVariations": ["blue" , "black","white"],
+      "sizeVariations": ["m", "l", "xl"]
+    },
+    {
+        "productId": 4,
+        "discount" : "0%",
+        "name": "T-Shirt",
+        "actual_price": 299.99,
+        "imageVariations" : ["../Images/t-shirts.jpg","../Images/t-shirts.jpg", "../Images/t-shirts.jpg","../Images/img26.jpg"],
+        "colorVariations": ["blue" , "black"],
+        "sizeVariations": ["m", "l", "xl"]
+      }
+  ]
+  

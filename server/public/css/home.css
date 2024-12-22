@@ -13,23 +13,41 @@ body {
 
 
 .main_btn {
-    display: inline-block;
-    background: aqua;
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+    border: 1px solid white;
+    background: none;
     color: white;
-    padding: 8px 30px;
-    margin: 30px 0;
-    border-radius: 30px;
-    text-decoration: none;
+    cursor: pointer;
+    font-size: 15px;
+    overflow: hidden;
+    position: relative; /* Required for ::before positioning */
+    transition: color 0.6s ease, border-color 0.6s ease;
+    z-index: 1;
+
 }
 
-.main_btn:hover{
-    transition: 0.5s;
-    transform: scale(1.1);
-    cursor: pointer;
+.main_btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0; /* Start with no width */
+    height: 100%; /* Full height of the button */
+    background: white; /* Background color */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Behind the text */
+    transition: width 0.6s ease; /* Smooth expansion */
 }
-.main_btn::after{
-    transition: 0.5s;
-    transform: scale(0.95);
+
+.main_btn:hover::before {
+    width: 100%; /* Expands to full width */
+}
+
+.main_btn:hover {
+    color: black; /* Change text color on hover */
+    border-color: white; /* Optional: Match border color to background */
 }
 
 
@@ -38,7 +56,7 @@ body {
     margin:auto;
     padding-left: 25px;
     padding-right: 25px;
-    background-color: #555;
+    background-color: #838282;
 }
 .row,.home-row {
     display: flex;
@@ -50,10 +68,12 @@ body {
 .col-2 {
     flex-basis: 50%;
     min-width: 300px;
+    margin: auto;
 }
 
 .col-2 img {
     max-width: 100%;
+    max-height: 600px;
     padding: 50px 0;
 }
 
@@ -61,10 +81,16 @@ body {
     font-size: 50px;
     line-height: 60px;
     margin: 25px 0;
+    color: #fff;
+}
+
+.col-2 p{
+    font-size: 15px;
 }
 
 .small-container {
-    max-width: 1080px;
+    /*max-width: 1080px;*/
+    width: 100%;
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
@@ -72,7 +98,7 @@ body {
 
 .col-4 {
     flex-basis: 25%;
-    padding: 10px;
+    padding: 20px;
     min-width: 200px;
     margin-bottom: 50px;
 }
@@ -209,6 +235,14 @@ h3{
     }
 }
 @media (max-width:440px){
+    .col-4 {
+        flex-basis: 25%;
+        padding: 0px;
+        padding-top: 10px;
+        min-width: 200px;
+        margin-bottom: 50px;
+    }
+    
     .featured-button{
         width: 100px;
         height: 30px;

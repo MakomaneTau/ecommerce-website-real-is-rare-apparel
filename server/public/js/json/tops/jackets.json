@@ -1,0 +1,30 @@
+[
+    {
+      "productId": 1,
+      "discount" : "0%",
+      "name": "Varsity Jacket",
+      "actual_price": 799.99,
+      "imageVariations" : ["../Images/img40.jpg","../Images/img54.jpg","../Images/varsity_jackets.jpg","../Images/img54.jpg"],
+      "colorVariations": ["red", "green", "blue","black","white"],
+      "sizeVariations": ["s", "m", "l","xl"]
+    },
+    {
+      "productId": 2,
+      "discount" : "0%",
+      "name": "Baseball Jacket",
+      "actual_price": 699.99,
+      "imageVariations" : ["../Images/img40.jpg","../Images/img54.jpg","../Images/varsity_jackets.jpg","../Images/img54.jpg"],
+      "colorVariations": ["black"],
+      "sizeVariations": ["xl", "m"]
+    },
+    {
+      "productId": 3,
+      "discount" : "10%",
+      "name": "Crop Varsity Jacket",
+      "actual_price": 299.99,
+      "imageVariations" : ["../Images/img40.jpg","../Images/img54.jpg","../Images/varsity_jackets.jpg","../Images/img54.jpg"],
+      "colorVariations": ["blue" , "black"],
+      "sizeVariations": ["m", "l", "xl"]
+    }
+  ]
+  
