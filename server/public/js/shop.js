@@ -62,7 +62,7 @@ const fetchDataForCategories = () => {
     let path;
 
     if (itemName === "Accessories") {
-        path = 'js/json/accessoriess.json';
+        path = 'js/json/accessories.json';
     } else if (itemName === "Sets") {
         path = 'js/json/sets.json';
     } else {

@@ -1,9 +1,18 @@
 [
     {
-        "productId": 6,
-        "discount" : "10%",
-        "name": "Track Set",
-        "actual_price": 799.99,
+        "productId": 18,
+        "discount" : "0%",
+        "name": "MiniMet Set",
+        "actual_price": 699.99,
+        "imageVariations" : ["../Images/beanies.jpg","../Images/img26.jpg", "../Images/img21.jpg","../Images/img26.jpg"],
+        "colorVariations": ["blue" , "black"],
+        "sizeVariations": ["m", "l", "xl"]
+      },
+      {
+        "productId": 19,
+        "discount" : "0%",
+        "name": "Puzzle Tracksuit",
+        "actual_price": 699.99,
         "imageVariations" : ["../Images/beanies.jpg","../Images/img26.jpg", "../Images/img21.jpg","../Images/img26.jpg"],
         "colorVariations": ["blue" , "black"],
         "sizeVariations": ["m", "l", "xl"]

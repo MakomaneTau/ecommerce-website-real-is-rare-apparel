@@ -1,18 +1,45 @@
 [
     {
-        "productId": 4,
-        "discount" : "10%",
+        "productId": 13,
+        "discount" : "0%",
         "name": "Beanies",
         "actual_price": 99.99,
+        "imageVariations" : ["../Images/beanies.jpg","../Images/img26.jpg", "../Images/img21.jpg","../Images/img26.jpg"],
+        "colorVariations": ["black", "white","red","blue","pink","green"],
+        "sizeVariations": ["s", "m", "l","xl"]
+      },
+      {
+        "productId": 14,
+        "discount" : "0%",
+        "name": "5-Panel Cap",
+        "actual_price": 199.99,
         "imageVariations" : ["../Images/beanies.jpg","../Images/img26.jpg", "../Images/img21.jpg","../Images/img26.jpg"],
         "colorVariations": ["blue" , "black"],
         "sizeVariations": ["m", "l", "xl"]
       },
       {
-        "productId": 5,
-        "discount" : "10%",
-        "name": "Caps",
+        "productId": 15,
+        "discount" : "0%",
+        "name": "Canvas Bag",
+        "actual_price": 249.99,
+        "imageVariations" : ["../Images/beanies.jpg","../Images/img26.jpg", "../Images/img21.jpg","../Images/img26.jpg"],
+        "colorVariations": ["blue" , "black"],
+        "sizeVariations": ["m", "l", "xl"]
+      },
+      {
+        "productId": 16,
+        "discount" : "0%",
+        "name": "Socks",
         "actual_price": 149.99,
+        "imageVariations" : ["../Images/beanies.jpg","../Images/img26.jpg", "../Images/img21.jpg","../Images/img26.jpg"],
+        "colorVariations": ["blue" , "black"],
+        "sizeVariations": ["m", "l", "xl"]
+      },
+      {
+        "productId": 17,
+        "discount" : "0%",
+        "name": "Side Bag",
+        "actual_price": 249.99,
         "imageVariations" : ["../Images/beanies.jpg","../Images/img26.jpg", "../Images/img21.jpg","../Images/img26.jpg"],
         "colorVariations": ["blue" , "black"],
         "sizeVariations": ["m", "l", "xl"]
