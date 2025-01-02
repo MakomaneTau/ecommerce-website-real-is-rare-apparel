@@ -24,6 +24,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/cart.html'));
   });
 
+  app.get('/exclusive', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/exclusive.html'));
+  });
+
 
 app.use((req, res) =>{
     res.status(404);

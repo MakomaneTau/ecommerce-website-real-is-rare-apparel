@@ -161,6 +161,12 @@ hr {
     display: block; /* Show menu when active */
 }
 
+.anncouncement{
+    text-align: center;
+    font-size: 15px;
+    padding:2px;
+}
+
 
 @media (max-width:807px){
     #navbar{
@@ -269,5 +275,32 @@ hr {
 
 }
 
+@media(max-width:500px){
+    .anncouncement{
+        text-align: center;
+        font-size: 10px;
+        padding:2px;
+    }
+}
 
 
+.hidden{
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+    transform:translateX(-100%);
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0);
+}
+
+.first{
+    transition-delay: 600ms;
+}
+
+.second{
+    transition-delay: 200ms;
+}

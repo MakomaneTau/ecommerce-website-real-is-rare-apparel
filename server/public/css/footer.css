@@ -13,13 +13,13 @@ footer{
 }
 .socialIcons a{
     text-decoration: none;
-    padding: 10px;
+    padding: 8px;
     background-color: white;
-    margin: 20px 20px;
-    border-radius: 100px;
+    margin: 10px 20px;
+    border-radius: 50%;
 }
 .socialIcons a i{
-    font-size: 2em;
+    font-size: 18px;
     color: black;
     opacity: 0.9;
 }
@@ -34,8 +34,17 @@ footer{
 }
 
 .footerNav{
-    margin: 10px 150px;
-    margin-bottom: 30px;
+    padding-top: 20px;
+    margin: 10px 5px;
+    margin-bottom: 20px;
+}
+
+.footerNav h2{
+    color: white;
+    text-align: center;
+    padding-bottom: 20px;
+    letter-spacing: 10px;
+
 }
 
 .footerNav ul{
@@ -66,6 +75,7 @@ footer{
 
 .footerBottom p{
     color: white;
+    letter-spacing: 10px;
 }
 .designer{
     opacity: 0.7;
@@ -73,15 +83,36 @@ footer{
     letter-spacing: 1px;
     font-weight: 400;
     margin: 0 5px;
+    letter-spacing: 10px;
 }
 
 @media (max-width:700px){
     .footerNav ul{
         flex-direction: column;
     }
+    .footerNav h2{
+        letter-spacing: 5px;
+        margin-bottom: 0;
+    
+    }
     .footerNav ul li{
         width: 100%;
         text-align: center;
         margin: 10px;
+    }
+    .footerBottom p{
+        letter-spacing: 5px;
+    }
+    .designer{
+        letter-spacing: 5px;
+    }
+}
+
+@media (max-width:500px){
+    .footerBottom p{
+        font-size: 10px;
+    }
+    .designer{
+        font-size: 10px;
     }
 }

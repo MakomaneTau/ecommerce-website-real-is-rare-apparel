@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             listProducts.forEach(product => {
                 let newProduct = document.createElement('div');
                 console.log(product);
-                newProduct.classList.add('scroll', 'col-4');
+                newProduct.classList.add('col-4','hidden');
 
                 const discountPercentage = parseFloat(product.discount) / 100;
                 const discountedPrice = product.actual_price * (1 - discountPercentage);
@@ -63,4 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     fetchData();
+
+    let exclusives = document.getElementById("exclusive");
+    exclusives.addEventListener("click", ()=>{
+        window.location.href= "/exclusive.html";
+    });
 });

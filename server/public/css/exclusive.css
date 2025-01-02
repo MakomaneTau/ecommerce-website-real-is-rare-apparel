@@ -1,0 +1,18 @@
+.exclusive-row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.exclusive-row a{
+    flex-basis: 20%;
+    /*min-width: 50px;*/
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.exclusive-row a img{
+    width: 100%;
+    min-width: 50px;
+}
