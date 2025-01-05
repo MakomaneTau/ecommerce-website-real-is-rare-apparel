@@ -14,5 +14,21 @@
 
 .exclusive-row a img{
     width: 100%;
-    min-width: 50px;
+    transition: .3s;
+}
+
+@media (max-width:500px){
+    .projects h2{
+        font-size: 20px;
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .exclusive-row a{
+        flex-basis: 20%;
+        padding: 0px;
+        margin: 10px;
+        min-width: 100px;
+    }
+
 }

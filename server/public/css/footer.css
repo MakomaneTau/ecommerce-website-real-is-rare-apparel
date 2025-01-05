@@ -13,23 +13,23 @@ footer{
 }
 .socialIcons a{
     text-decoration: none;
-    padding: 8px;
-    background-color: white;
+    padding: 6px;
+    background-color: none;
     margin: 10px 20px;
     border-radius: 50%;
 }
 .socialIcons a i{
     font-size: 18px;
-    color: black;
+    color: white;
     opacity: 0.9;
 }
 .socialIcons a:hover{
-    background-color: #111;
+    background-color: white;
     transition: 0.5s;
 }
 
 .socialIcons a:hover i{
-    color: white;
+    color: black;
     transition: 0.5s;
 }
 
@@ -37,28 +37,34 @@ footer{
     padding-top: 20px;
     margin: 10px 5px;
     margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
 }
 
 .footerNav h2{
     color: white;
-    text-align: center;
     padding-bottom: 20px;
     letter-spacing: 10px;
 
 }
 
 .footerNav ul{
-    display: flex;
-    justify-content: center;
+    display:block;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
+
+.footerNav ul li{
+    padding: 10px;
+}
+
 .footerNav ul li a{
     color: white;
     margin: auto;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 15px;
     opacity: 0.7;
     transition: 0.5s;
 }
@@ -87,18 +93,31 @@ footer{
 }
 
 @media (max-width:700px){
+    .footerNav{
+        display: block;
+        margin-top: 0;
+
+    }
     .footerNav ul{
         flex-direction: column;
     }
     .footerNav h2{
+        margin-top: 30px;
         letter-spacing: 5px;
         margin-bottom: 0;
+        text-align: center;
     
     }
+
+    /*.footerNav h2:nth-child(1){
+        margin-top: 50px;
+    }*/
+
     .footerNav ul li{
         width: 100%;
         text-align: center;
         margin: 10px;
+        padding-left: 0;
     }
     .footerBottom p{
         letter-spacing: 5px;

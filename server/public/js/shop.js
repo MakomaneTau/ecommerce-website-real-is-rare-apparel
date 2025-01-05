@@ -25,7 +25,6 @@ const addProductsToHTML = (productList, rowElement) => {
     rowElement.innerHTML = ''; // Clear previous content
     productList.forEach(product => {
         let newProduct = document.createElement('div');
-        newProduct.classList.add('scroll');
         newProduct.classList.add('col-4');
 
         // Calculate discount

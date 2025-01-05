@@ -7,14 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return; // Exit if the element doesn't exist
     }
 
-    
-    let cart_quantity = document.querySelectorAll(".quantity");
-    if (cart_quantity) {
-        cart_quantity[0].innerHTML = getTotalItemsInCart();
-        cart_quantity[1].innerHTML = getTotalItemsInCart();
-    } else {
-        console.error("Cart quantity element not found.");
-    }
+
 
     let listProducts = [];
 
@@ -23,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if (listProducts.length > 0) {
             listProducts.forEach(product => {
                 let newProduct = document.createElement('div');
-                console.log(product);
-                newProduct.classList.add('col-4','hidden');
+                //console.log(product);
+                newProduct.classList.add('col-4');
 
                 const discountPercentage = parseFloat(product.discount) / 100;
                 const discountedPrice = product.actual_price * (1 - discountPercentage);

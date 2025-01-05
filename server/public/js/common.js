@@ -1,7 +1,15 @@
 import { getTotalItemsInCart } from "./functions.js";
 let cart_quantity = document.querySelectorAll(".quantity");
-cart_quantity[0].innerHTML = getTotalItemsInCart();
-cart_quantity[1].innerHTML = getTotalItemsInCart();
+if(getTotalItemsInCart() === 0){
+    cart_quantity[0].innerHTML = '';
+    cart_quantity[1].innerHTML = '';
+}
+else{
+    cart_quantity[0].innerHTML = getTotalItemsInCart();
+    cart_quantity[1].innerHTML = getTotalItemsInCart();
+}
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -105,19 +113,14 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const hiddenElements = document.querySelectorAll('.hidden');
 
-
-    const observer = new IntersectionObserver((entries) =>{
-        entries.forEach((entry) =>{
-            console.log(entry);
-            if(entry.isIntersecting){
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
                 entry.target.classList.add('show');
+                observer.unobserve(entry.target); // Stop observing the element
             }
-            else{
-                entry.target.classList.remove('show');
-            }
-        })
+        });
     });
 
     hiddenElements.forEach((el) => observer.observe(el));
-
 });

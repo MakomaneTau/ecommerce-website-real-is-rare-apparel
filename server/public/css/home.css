@@ -235,17 +235,30 @@ h3{
     }
 }
 @media (max-width:440px){
+
+    .small-container {
+        /*max-width: 1080px;*/
+        width: 100%;
+        margin: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
     .col-4 {
         flex-basis: 25%;
         padding: 0px;
         padding-top: 10px;
-        min-width: 200px;
-        margin-bottom: 50px;
+        min-width: 150px;
+        margin: 20px;
     }
     
     .featured-button{
         width: 100px;
         height: 30px;
+    }
+    .discount-tag{
+        background: #fff;
+        font-size: 8px;
     }
 }
 
