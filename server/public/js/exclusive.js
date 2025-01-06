@@ -6,7 +6,6 @@ let listProducts = [];
 
 
 const addDataToHTML = (listItems) => {
-    //let heading = document.querySelector(".heading");
     projectsHTML.innerHTML ='';
     if(listItems.length > 0){
         listItems.forEach(item =>{

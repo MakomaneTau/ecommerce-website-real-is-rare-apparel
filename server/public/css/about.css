@@ -8,11 +8,11 @@
 .store img {
     display: block;
     width: 100%;
-    transition: 0.5s ease; /* Smooth transition for blur effect */
+    transition: 0.5s ease;
 }
 
 .store:hover img {
-    filter: blur(5px); /* Apply blur effect on hover */
+    filter: blur(5px);
 }
 
 .reveal {
@@ -24,12 +24,12 @@
     height: 100%;
     width: 100%;
     opacity: 0;
-    transition: 0.5s ease; /* Smooth fade-in */
-    background-color: rgba(167, 167, 167, 0.5); /* Semi-transparent background */
+    transition: 0.5s ease;
+    background-color: rgba(167, 167, 167, 0.5);
 }
 
 .store:hover .reveal {
-    opacity: 1; /* Reveal overlay when hovering */
+    opacity: 1;
 }
 
 .reveal a {
@@ -42,21 +42,21 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
-    text-decoration: none; /* Remove underline for the link */
+    text-decoration: none;
 }
 
 .cards{
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Assuming you want an image + content layout */
-    gap: 20px; /* Adds spacing between items */
-    align-items: center; /* Align items vertically */
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
     margin:20px 20px;
 }
 .profile { 
     display: grid;
-    grid-template-columns: auto 1fr; /* Assuming you want an image + content layout */
-    gap: 16px; /* Adds spacing between items */
-    align-items: center; /* Align items vertically */
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: center;
     background-color: rgb(182, 182, 182);
     box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
     border-radius: 20px;
@@ -65,8 +65,8 @@
 .profile img {
     width: 200px;
     height: 200px;
-    object-fit: cover; /* Ensures the image does not stretch */
-    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover;
+    border-radius: 50%;
     margin: 20px;
 }
 
@@ -112,8 +112,8 @@ h1{
     }
     .profile { 
         display: grid;
-        gap: 10px; /* Adds spacing between items */
-        align-items: center; /* Align items vertically */
+        gap: 10px;
+        align-items: center;
     }
     
 }
@@ -121,25 +121,19 @@ h1{
 @media (max-width: 890px){
     .cards{
         display: grid;
-        grid-template-columns: 1fr; /* Assuming you want an image + content layout */
-        gap: 30px; /* Adds spacing between items */
-        align-items: center; /* Align items vertically */
+        grid-template-columns: 1fr;
+        gap: 30px;
+        align-items: center;
         margin:20px 20px;
     }
 }
-/*
-@media (max-width:700px){
-    .store img {
-        height: 250px;
-    }
-}*/
 
 @media (max-width: 455px){
     .profile { 
         display: grid;
-        grid-template-columns: auto 1fr; /* Assuming you want an image + content layout */
-        gap: 5px; /* Adds spacing between items */
-        align-items: center; /* Align items vertically */
+        grid-template-columns: auto 1fr;
+        gap: 5px;
+        align-items: center;
         background-color: rgb(182, 182, 182);
         box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
         border-radius: 20px;
@@ -148,8 +142,8 @@ h1{
     .profile img {
         width: 200px;
         height: 200px;
-        object-fit: cover; /* Ensures the image does not stretch */
-        border-radius: 50%; /* Makes the image circular */
+        object-fit: cover;
+        border-radius: 50%;
         margin: 5px;
     }
     .content {

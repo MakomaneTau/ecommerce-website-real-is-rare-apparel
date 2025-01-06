@@ -31,8 +31,8 @@ img.displaySlide{
     color: white;
     border: none;
     cursor: pointer;
-    opacity: 0; /* Make the button invisible */
-    z-index: 2; /* Ensure the button is above the image */
+    opacity: 0;
+    z-index: 2;
 }
 
 .previous{

@@ -22,7 +22,7 @@ body {
     cursor: pointer;
     font-size: 15px;
     overflow: hidden;
-    position: relative; /* Required for ::before positioning */
+    position: relative;
     transition: color 0.6s ease, border-color 0.6s ease;
     z-index: 1;
 
@@ -33,21 +33,21 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 0; /* Start with no width */
-    height: 100%; /* Full height of the button */
-    background: white; /* Background color */
+    width: 0;
+    height: 100%;
+    background: white;
     transform: translate(-50%, -50%);
-    z-index: -1; /* Behind the text */
-    transition: width 0.6s ease; /* Smooth expansion */
+    z-index: -1;
+    transition: width 0.6s ease;
 }
 
 .main_btn:hover::before {
-    width: 100%; /* Expands to full width */
+    width: 100%;
 }
 
 .main_btn:hover {
-    color: black; /* Change text color on hover */
-    border-color: white; /* Optional: Match border color to background */
+    color: black;
+    border-color: white;
 }
 
 
@@ -172,20 +172,20 @@ h3{
 .featured {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Two-column layout */
-    gap: 0px; /* Adds spacing between items */
+    grid-template-columns: 1fr 1fr;
+    gap: 0px;
     align-items: center;
     margin: 0px 0px;
     margin-bottom: 20px;
 }
 
 .image-container {
-    position: relative; /* Enables absolute positioning for its children */
+    position: relative;
 }
 
 .first img, .second img {
     width: 100%;
-    display: block; /* Ensures proper layout */
+    display: block;
 }
 
 .featured-button {
@@ -209,21 +209,21 @@ h3{
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 0%; /* Initial width */
+    width: 0%;
     height: 100%;
     background: white;
     transform: translate(-50%, -50%);
     z-index: -1;
-    transition: width 0.6s ease; /* Smooth expansion */
+    transition: width 0.6s ease;
 }
 
 .featured-button:hover::before {
-    width: 100%; /* Expands to full width */
+    width: 100%;
 }
 
 .featured-button:hover {
-    color: black; /* Change text color on hover */
-    border-color: white; /* Optional: Match border color to background */
+    color: black;
+    border-color: white;
 }
 
 

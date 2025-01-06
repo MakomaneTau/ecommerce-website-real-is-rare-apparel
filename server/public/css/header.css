@@ -1,25 +1,25 @@
 body {
     width: 100%;
-    margin: 0; /* Ensure no default margin on the body */
+    margin: 0;
 }
 
 #header {
     display: flex;
     height: 80px;
     align-items: center;
-    justify-content: space-between; /* Ensure space between logo and navbar */
-    padding: 0 20px; /* Add consistent padding on both sides */
+    justify-content: space-between;
+    padding: 0 20px;
     background: #1a1a1a;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-    position: sticky; /* Makes the header sticky */
-    top: 0; /* Keeps it at the top of the viewport */
-    z-index: 999; /* Ensures it stays above other content */
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 #navbar {
     display: flex;
-    justify-content: flex-end; /* Align navbar items to the right */
-    width: 100%; /* Span the navbar across available width */
+    justify-content: flex-end;
+    width: 100%;
 }
 
 #header img {
@@ -28,15 +28,15 @@ body {
 }
 
 #navbar ul {
-    margin: 0; /* Reset default ul margin */
-    padding: 0; /* Reset default ul padding */
-    list-style: none; /* Remove bullets */
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 #navbar li {
-    padding: 0 20px; /* Add spacing between items */
+    padding: 0 20px;
     position: relative;
-    list-style: none; /* Remove bullets */
+    list-style: none;
 }
 
 #navbar li a {
@@ -45,7 +45,7 @@ body {
     font-weight: 600;
     color: #fff;
     position: relative;
-    transition: color 0.3s ease; /* Smooth color change on hover */
+    transition: color 0.3s ease;
 }
 
 #navbar li a::before {
@@ -55,7 +55,7 @@ body {
     bottom: -4px;
     height: 3px;
     width: 100%;
-    background: wheat; /* Underline color */
+    background: wheat;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.4s linear;
@@ -113,9 +113,9 @@ hr {
 .dropdown_menu {
     position: absolute;
     left: 0;
-    top: 100%; /* Align below the parent element */
+    top: 100%;
     background-color: black;
-    z-index: 999; /* Ensure it appears above other elements */
+    z-index: 999;
     display: none;
 }
 .dropdown_menu > ul{
@@ -132,7 +132,7 @@ hr {
 
 
 .dropdown_menu > ul > li:last-child {
-    border-bottom: none; /* Remove line from the last item */
+    border-bottom: none;
 }
 
 .fas{
@@ -153,12 +153,12 @@ hr {
     margin: 20px 0px;
 }
 .dropdown_menu-1 > ul > li:last-child {
-    border-bottom: none; /* Remove line from the last item */
+    border-bottom: none;
 
 }
 
 .dropdown_menu.active, .dropdown_menu-1.active {
-    display: block; /* Show menu when active */
+    display: block;
 }
 
 .anncouncement{
@@ -223,9 +223,6 @@ hr {
         display: none;
     }
 
-    /*#navbar > li:nth-child(2){
-        margin-bottom: 0px;
-    }*/
     
     .dropdown_menu {
         position: relative;
@@ -254,7 +251,7 @@ hr {
     }
 
     .dropdown_menu >  ul > li:first-child {
-        margin-top: 10px; /* Only apply margin to the first child inside .dropdown_menu*/
+        margin-top: 10px;
 
     }
     .dropdown_menu-1 > ul > li{
@@ -265,11 +262,11 @@ hr {
     }
 
     .dropdown_menu-1 >  ul > li:first-child {
-        margin-top: 5px; /* Only apply margin to the first child inside .dropdown_menu*/
+        margin-top: 5px;
 
     }
     .dropdown_menu-1 >  ul > li:last-child {
-        margin-bottom: 5px; /* Only apply margin to the first child inside .dropdown_menu*/
+        margin-bottom: 5px;
 
     }
 

@@ -16,7 +16,8 @@ export function toggleCartVisibility(cart) {
     if (subtotalSection) subtotalSection.classList.add("hidden");
     if (clear) clear.classList.add("hidden");
     if (emptyCartMessage) emptyCartMessage.classList.remove("hidden"); // Show empty cart message if present
-  } else {
+  } 
+  else {
     if (cartContent) cartContent.classList.remove("hidden");
     if (subtotalSection) subtotalSection.classList.remove("hidden");
     if (clear) clear.classList.remove("hidden");
